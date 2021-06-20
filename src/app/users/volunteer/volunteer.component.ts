@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {VolunteerService} from "../../services/volunteer.service";
+import {VolunteerModel} from "../../model/volunteer.model";
 
 @Component({
   selector: 'app-volunteer',
@@ -7,9 +10,19 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class VolunteerComponent implements OnInit {
 
-  @Input() volunteer: { id: number; nom: string; password: string; type: string; } | undefined;
+  volunteers: VolunteerModel[] | undefined;
+
+  constructor(private volunteerService: VolunteerService, private router: Router) {
+  }
+
 
   ngOnInit(): void {
+    //.suscribe = car la  fonction getAllVolunteers return un Observable
+    this.volunteerService.getAllVolunteers().subscribe(volunteers => {
+      console.log(volunteers);
+      this.volunteers = volunteers;
+    });
+
   }
 
 
