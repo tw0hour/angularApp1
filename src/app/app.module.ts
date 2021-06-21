@@ -9,6 +9,7 @@ import { CampComponent } from './users/camp/camp.component';
 import {HttpClientModule} from "@angular/common/http";
 import { VolunteerInscriptionComponent } from './users/volunteer-inscription/volunteer-inscription.component';
 import {FormsModule} from "@angular/forms";
+import { VolunteerConnectionComponent } from './users/volunteer-connection/volunteer-connection.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule} from "@angular/forms";
     VolunteerComponent,
     AssociationComponent,
     CampComponent,
-    VolunteerInscriptionComponent
+    VolunteerInscriptionComponent,
+    VolunteerConnectionComponent
   ],
     imports: [
         BrowserModule,
