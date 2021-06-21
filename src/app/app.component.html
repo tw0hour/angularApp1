@@ -4,41 +4,23 @@
 <head>
   <meta charset="utf-8">
   <title>Gestion des Volontaires</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Gestion Volontaires</a>
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/produits" >Home</a>
-    </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Volontaires
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink = "add-produit">Ajouter</a>
-        <a class="dropdown-item" href="#">Lister</a>
-      </div>
-    </li>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="#">Gestion Volontaires</a></li>
+    <li class="list-group-item"><a routerLink="#" >Home</a></li>
+    <li class="list-group-item"><a href="volunteer" id="navbardrop" data-toggle="dropdown">Volontaires</a></li>
+    <li class="list-group-item"><a routerLink = "add-produit">Ajouter</a></li>
+    <li class="list-group-item"><a href="#">Lister</a></li>
   </ul>
-  <ul class="navbar-nav ml-auto" >
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        [username]
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">login</a>
-        <a class="dropdown-item" href="#">logout</a>
-        <a class="dropdown-item" href="#">Profile</a>
-      </div>
-    </li>
+  <ul>
+    <li><a href="#">login</a></li>
+    <li><a href="#">logout</a></li>
+    <li><a href="#">Profile</a></li>
   </ul>
-</nav>
+  <router-outlet></router-outlet>
 </body>
 </html>
 
-<router-outlet></router-outlet>
+

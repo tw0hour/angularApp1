@@ -7,7 +7,7 @@ import { VolunteerComponent } from './users/volunteer/volunteer.component';
 import { AssociationComponent } from './users/association/association.component';
 import { CampComponent } from './users/camp/camp.component';
 import {HttpClientModule} from "@angular/common/http";
-import { VolunteerInscriptionComponent } from './users/volunteer-inscription/volunteer-inscription.component';
+//import { VolunteerInscriptionComponent } from './users/volunteer-inscription/volunteer-inscription.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -15,8 +15,8 @@ import {FormsModule} from "@angular/forms";
     AppComponent,
     VolunteerComponent,
     AssociationComponent,
-    CampComponent,
-    VolunteerInscriptionComponent
+    CampComponent//,
+    //VolunteerInscriptionComponent
   ],
     imports: [
         BrowserModule,
