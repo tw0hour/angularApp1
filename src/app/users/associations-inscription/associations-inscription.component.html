@@ -1,0 +1,18 @@
+<p> Formulaire d'inscription pour les Associations</p>
+
+
+<form>
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="association.name">
+  </div>
+  <div class="form-group">
+    <label>Mail: </label>
+    <input type="email" name="mail" class="form-control" [(ngModel)]="association.mail">
+  </div>
+  <div class="form-group">
+    <label>Mot de Passe: </label>
+    <input type="password" name="passwword" class="form-control" [(ngModel)]="association.password">
+  </div>
+  <button type="button" (click)="inscriptionAssoc()" class="btn bnt-success">S'inscrire</button>
+</form>

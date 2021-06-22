@@ -5,8 +5,9 @@ import {VolunteerModel} from "../models/volunteer.model";
 
 //Préciser à Angular que les données retounées par les routes sont du JSON
 const httpOptions = {
-  headers: new HttpHeaders({'Contenet-type': 'applcation/html'})
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
 };
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +30,7 @@ export class VolunteerService {
   }
 
   connection(name: string | undefined, password: string | undefined): boolean | null{
-    //KO : la fonction ne passe dans le 2ème if
+    //KO : la fonction ne passe pas dans le 2ème if
     if(name === undefined || password === undefined){
       alert("Tous les champs doivent être remplis !");
       return null;

@@ -1,0 +1,21 @@
+<p>Signaler un Nouveau Camp</p>
+<form>
+  <div class="form-group">
+    <label>Nombre de Personne: </label>
+    <input type="number" name="nbPeople" class="form-control" [(ngModel)]="camp.nbPeople">
+  </div>
+  <div class="form-group">
+    <label>Ville : </label>
+    <input type="text" name="city" class="form-control" [(ngModel)]="camp.city">
+  </div>
+  <div class="form-group">
+    <label>Adresse : </label>
+    <input type="text" name="address" class="form-control" [(ngModel)]="camp.address">
+  </div>
+  <div class="form-group">
+    <label>Code Postal : </label>
+    <input type="number" name="postalCode" class="form-control" [(ngModel)]="camp.postalCode">
+  </div>
+  <button type="button" (click)="reportCamp()" class="btn bnt-success">Signaler</button>
+</form>
+

@@ -5,7 +5,7 @@ import {Camp} from "../models/camp.model";
 
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
 };
 
 export interface CampProps {
@@ -37,6 +37,12 @@ export class CampServices {
     if (!camp.nbPeople || !camp.city || !camp.address || !camp.postalCode){
       alert("Tous les champs doivent être remplis !");
     }
+
+    console.log("camp.services.ts :" + camp.nbPeople);
+    console.log("camp.services.ts :" + camp.city);
+    console.log("camp.services.ts:" + camp.address);
+    console.log("camp.services.ts :" + camp.postalCode);
+
     return this.http.post<Camp>(this.apiUrl, Camp, httpOptions);
   }
 
