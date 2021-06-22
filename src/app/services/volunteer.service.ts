@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
-import {VolunteerModel} from "../model/volunteer.model";
+import {VolunteerModel} from "../models/volunteer.model";
 
 //Préciser à Angular que les données retounées par les routes sont du JSON
 const httpOptions = {
