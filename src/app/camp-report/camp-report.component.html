@@ -16,6 +16,11 @@
     <label>Code Postal : </label>
     <input type="number" name="postalCode" class="form-control" [(ngModel)]="camp.postalCode">
   </div>
+  <select id="monselect">
+    <option value="valeur1">Valeur 1</option>
+    <option value="valeur2" selected>Valeur 2</option>
+    <option value="valeur3">Valeur 3</option>
+  </select>
   <button type="button" (click)="reportCamp()" class="btn bnt-success">Signaler</button>
 </form>
 

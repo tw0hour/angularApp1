@@ -3,20 +3,9 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Camp} from "../models/camp.model";
 
-
 const httpOptions = {
-  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
+  headers: new HttpHeaders( {'Content-Type': 'application/json'})
 };
-
-export interface CampProps {
-  id?:number;
-  nbPeople:number | undefined;
-  city:string | undefined;
-  address:string | undefined;
-  postalCode: number | undefined;
-  association_id:number | undefined;
-  planning_camp_id:number | undefined;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -37,13 +26,11 @@ export class CampServices {
     if (!camp.nbPeople || !camp.city || !camp.address || !camp.postalCode){
       alert("Tous les champs doivent être remplis !");
     }
+    return this.http.post<Camp>(this.apiUrl, camp, httpOptions);
+  }
 
-    console.log("camp.services.ts :" + camp.nbPeople);
-    console.log("camp.services.ts :" + camp.city);
-    console.log("camp.services.ts:" + camp.address);
-    console.log("camp.services.ts :" + camp.postalCode);
-
-    return this.http.post<Camp>(this.apiUrl, Camp, httpOptions);
+  getAllCamp(): Observable<Camp[]>{
+    return this.http.get<Camp[]>(this.apiUrl);
   }
 
 }
