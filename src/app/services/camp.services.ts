@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Camp} from "../models/camp.model";
+import {Medicament} from "../models/medicament.model";
 
 const httpOptions = {
   headers: new HttpHeaders( {'Content-Type': 'application/json'})
@@ -31,6 +32,13 @@ export class CampServices {
 
   getAllCamp(): Observable<Camp[]>{
     return this.http.get<Camp[]>(this.apiUrl);
+  }
+
+  getCampById(idCamp: number): Observable<Camp>{
+    if(!idCamp){
+      console.log("Id manquant");
+    }
+    return this.http.get<Camp >(this.apiUrl + idCamp, httpOptions);
   }
 
 }

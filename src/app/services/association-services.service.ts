@@ -22,6 +22,13 @@ export class AssociationServices {
     return this.http.get<Association[]>(this.apiUrl);
   }
 
+  getAssociationById(idAssoc: number): Observable<Association>{
+    if(!idAssoc){
+      console.log("Id manquant");
+    }
+    return  this.http.get<Association>(this.apiUrl + idAssoc, httpOptions);
+  }
+
   inscription(assoc: Association): Observable<Association>{
     if (!assoc.name || !assoc.mail || !assoc.password){
       alert("Tous les champs doivent être remplis !");

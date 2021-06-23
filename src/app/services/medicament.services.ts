@@ -13,7 +13,7 @@ const httpOptions = {
 
 export class MedicamentServices {
 
-  apiUrl: string = "http://localhost:3000/association/";
+  apiUrl: string = "http://localhost:3000/medicament/";
 
   constructor(private http: HttpClient){
   }
