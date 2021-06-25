@@ -13,6 +13,7 @@ import { CampReportComponent } from './camp-report/camp-report.component';
 import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volunteer-inscription.component";
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
 import { MedicamentComponent } from './medicament/medicament.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MedicamentComponent } from './medicament/medicament.component';
         AppRoutingModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        NgbModule
     ],
   providers: [],
   bootstrap: [AppComponent]

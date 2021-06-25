@@ -1,21 +1,16 @@
-<p>association works!</p>
 <div class="container">
   <div class="card shadow mb-4">
     <div class="card-body">
       <table class="table table-striped">
         <thead>
-        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th> </tr>
+        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>mail</th> </tr>
         </thead>
         <tbody *ngFor="let association of associations">
         <tr >
           <td>{{association.id}}</td>
           <td>{{association.name}}</td>
-          <td>{{association.mail}}</td>
-          <td>{{association.password}}</td>
           <td>{{association.money}}</td>
-<!--          <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>-->
-<!--          <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a></td>-->
-
+          <td>{{association.mail}}</td>
         </tr>
         </tbody>
       </table>

@@ -3,13 +3,12 @@
     <div class="card-body">
       <table class="table table-striped">
         <thead>
-        <tr> <th>Id</th><th>Mail</th> <th>Password</th> <th>type</th> </tr>
+        <tr> <th>Id</th><th>Mail</th> <th>type</th> </tr>
         </thead>
         <tbody *ngFor="let volunteer of volunteers">
         <tr >
           <td>{{volunteer.id}}</td>
           <td>{{volunteer.mail}}</td>
-          <td>{{volunteer.password}}</td>
           <td>{{volunteer.type}}</td>
         </tr>
         </tbody>

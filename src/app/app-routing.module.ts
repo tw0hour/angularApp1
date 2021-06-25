@@ -13,8 +13,8 @@ import {MedicamentComponent} from "./medicament/medicament.component";
 const routes: Routes = [
   {path:"associations",component:AssociationComponent},
   {path : "volunteer", component : VolunteerComponent},
-  {path : "inscription", component : VolunteerInscriptionComponent},
-  {path : "connection", component : VolunteerConnectionComponent},
+  {path : "volunteer/inscription", component : VolunteerInscriptionComponent},
+  {path : "volunteer/connection", component : VolunteerConnectionComponent},
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
   {path: "camp/report", component: CampReportComponent},
