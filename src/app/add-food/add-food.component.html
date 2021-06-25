@@ -1,0 +1,23 @@
+<p>add-food works!</p>
+
+<form method="post">
+  <div class="form-group">
+    <router-outlet></router-outlet>
+    <label>Type de nouritures: </label>
+    <select [(ngModel)]="foodType" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let typeFood of typesFood" [ngValue]="typeFood.id" [(ngModel)]="foodType" [ngModelOptions]="{standalone: true}">
+        {{typeFood.type}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Nom: </label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="food.name">
+  </div>
+  <div class="form-group">
+    <label>Date de péremption: </label>
+    <input type="date" class="form-control" [(ngModel)]="food.expirationDate">
+  </div>
+  <button type="button" (click)="addFood()" class="btn bnt-success">Ajouter</button>
+</form>
+
