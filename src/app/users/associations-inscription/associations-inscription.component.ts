@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Association} from "../../models/associations.model";
-import {VolunteerService} from "../../services/volunteer.service";
 import {AssociationServices} from "../../services/association-services.service";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-associations-inscription',
@@ -21,6 +21,7 @@ export class AssociationsInscriptionComponent implements OnInit {
     this.associationService.inscription(this.association).subscribe(inscrit => {
       console.log(inscrit);
     });
+
   }
 
 

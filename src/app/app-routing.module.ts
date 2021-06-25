@@ -8,6 +8,7 @@ import {CampReportComponent} from "./camp-report/camp-report.component";
 import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volunteer-inscription.component";
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
 import {MedicamentComponent} from "./medicament/medicament.component";
+import {AddFoodComponent} from "./add-food/add-food.component";
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
   {path: "camp/report", component: CampReportComponent},
-  {path: "donation/medicament", component: MedicamentComponent}
+  {path: "donation/medicament", component: MedicamentComponent},
+  {path: "donation/food", component: AddFoodComponent}
 ];
 
 @NgModule({

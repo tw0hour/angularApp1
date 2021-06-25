@@ -29,6 +29,13 @@ export class AssociationServices {
     return  this.http.get<Association>(this.apiUrl + idAssoc, httpOptions);
   }
 
+  getAssociationByName(assocName: string): Observable<Association>{
+    if(!assocName){
+      console.log("Nom manquant");
+    }
+    return  this.http.get<Association>(this.apiUrl + "name/" + assocName, httpOptions);
+  }
+
   inscription(assoc: Association): Observable<Association>{
     if (!assoc.name || !assoc.mail || !assoc.password){
       alert("Tous les champs doivent être remplis !");
