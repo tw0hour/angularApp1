@@ -27,6 +27,4 @@ export class MedicamentComponent implements OnInit {
     this.medicamentService.getMedicamentById(this.medicament.id);
   }
 
-
-
 }

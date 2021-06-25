@@ -14,6 +14,8 @@ import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volun
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
 import { MedicamentComponent } from './medicament/medicament.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddFoodComponent } from './add-food/add-food.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AssociationsInscriptionComponent,
     AssociationsConnectionComponent,
     CampReportComponent,
-    MedicamentComponent
+    MedicamentComponent,
+    AddFoodComponent
   ],
     imports: [
         BrowserModule,

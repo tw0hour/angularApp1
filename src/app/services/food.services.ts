@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Food} from "../models/food.model";
 import {Observable} from "rxjs";
+import {CookieService} from "ngx-cookie-service";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -11,15 +12,26 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class TypeClothServices {
+export class FoodServices {
   apiUrl: string = "http://localhost:3000/food/";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cookieService: CookieService) {
   }
 
   addFood(food: Food){
+    console.log("Id typeFood: " + food.type_food_id);
     if(!food.name || !food.expirationDate || !food.volunteer_id  || !food.type_food_id){
       alert("Veuillez rempir tous les champs");
+    }
+
+    food.volunteer_id = parseInt(this.cookieService.get('associationId'));
+
+    console.log("Nom Food:" + food.name);
+    console.log("Id Cookie ajout typeFood:" + food.volunteer_id);
+    console.log("Date addFood : " + food.expirationDate);
+
+    if(!food.volunteer_id){
+      alert("Id volontaire manquant, problème avec le cookie");
     }
     return this.http.post<Food>(this.apiUrl, food, httpOptions);
   }
