@@ -1,26 +1,66 @@
-<p>Signaler un Nouveau Camp</p>
-<form>
-  <div class="form-group">
-    <label>Nombre de Personne: </label>
-    <input type="number" name="nbPeople" class="form-control" [(ngModel)]="camp.nbPeople">
+<!--<p>Signaler un Nouveau Camp</p>-->
+<!--<form>-->
+<!--  <div class="form-group">-->
+<!--    <label>Nombre de Personne: </label>-->
+<!--    <input type="number" name="nbPeople" class="form-control" [(ngModel)]="camp.nbPeople">-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label>Ville : </label>-->
+<!--    <input type="text" name="city" class="form-control" [(ngModel)]="camp.city">-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label>Adresse : </label>-->
+<!--    <input type="text" name="address" class="form-control" [(ngModel)]="camp.address">-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label>Code Postal : </label>-->
+<!--    <input type="number" name="postalCode" class="form-control" [(ngModel)]="camp.postalCode">-->
+<!--  </div>-->
+<!--  <button type="button" (click)="reportCamp()" class="btn bnt-success">Signaler</button>-->
+<!--</form>-->
+
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p>Signaler un nouveau camp</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="nbPeople">Nombre de personnes : </label>
+        <input type="number" name="nbPeople" id="nbPeople" class="form-control" [(ngModel)]="camp.nbPeople">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="city">Ville : </label>
+        <input type="text" id="city" name="city" class="form-control" [(ngModel)]="camp.city">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="address">Addresse : </label>
+        <input type="text" id="address" name="address" class="form-control" [(ngModel)]="camp.address">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="postalCode">Code postal : </label>
+        <input type="number" id="postalCode" name="postalCode" class="form-control" [(ngModel)]="camp.postalCode">
+      </div>
+    </div>
+
+
+    <br>
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="reportCamp()" class="btn btn-primary mb-2 col-md-2">Rapporter</button>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label>Ville : </label>
-    <input type="text" name="city" class="form-control" [(ngModel)]="camp.city">
-  </div>
-  <div class="form-group">
-    <label>Adresse : </label>
-    <input type="text" name="address" class="form-control" [(ngModel)]="camp.address">
-  </div>
-  <div class="form-group">
-    <label>Code Postal : </label>
-    <input type="number" name="postalCode" class="form-control" [(ngModel)]="camp.postalCode">
-  </div>
-  <select id="monselect">
-    <option value="valeur1">Valeur 1</option>
-    <option value="valeur2" selected>Valeur 2</option>
-    <option value="valeur3">Valeur 3</option>
-  </select>
-  <button type="button" (click)="reportCamp()" class="btn bnt-success">Signaler</button>
 </form>
+
 

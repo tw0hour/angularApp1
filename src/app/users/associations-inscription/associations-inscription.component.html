@@ -1,18 +1,34 @@
-<p> Formulaire d'inscription pour les Associations</p>
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p> Formulaire d'inscription pour les Associations</p>
+    </div>
 
+    <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name" class="form-control" [(ngModel)]="association.name">
+    </div>
+    </div>
 
-<form>
-  <div class="form-group">
-    <label>Name: </label>
-    <input type="text" name="name" class="form-control" [(ngModel)]="association.name">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="mail">Mail: </label>
+        <input type="email" id="mail" name="mail" class="form-control" [(ngModel)]="association.mail">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="password">Mot de Passe: </label>
+        <input type="password" id="password" name="passwword" class="form-control" [(ngModel)]="association.password">
+      </div>
+    </div>
+        <br>
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="inscriptionAssoc()" class="btn btn-primary mb-2 col-md-2">S'inscrire</button>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label>Mail: </label>
-    <input type="email" name="mail" class="form-control" [(ngModel)]="association.mail">
-  </div>
-  <div class="form-group">
-    <label>Mot de Passe: </label>
-    <input type="password" name="passwword" class="form-control" [(ngModel)]="association.password">
-  </div>
-  <button type="button" (click)="inscriptionAssoc()" class="btn bnt-success">S'inscrire</button>
 </form>

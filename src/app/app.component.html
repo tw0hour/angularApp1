@@ -12,9 +12,9 @@
   <li ngbDropdown><a class="navbar-brand" href="#">Human-Helper</a></li>
 
   <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>association</a>
+    <a href (click)="false" class="nav-link" ngbDropdownToggle>Association</a>
     <div ngbDropdownMenu>
-      <button routerLink="association/connection" class="dropdown-item" ngbDropdownItem>Connection</button>
+      <button routerLink="association/connection" class="dropdown-item" ngbDropdownItem>Connexion</button>
       <button routerLink="association/inscription" class="dropdown-item" ngbDropdownItem>inscription</button>
       <div class="dropdown-divider"></div>
       <button routerLink="associations" class="dropdown-item" ngbDropdownItem>Liste</button>
@@ -24,7 +24,7 @@
   <li ngbDropdown class="nav-item">
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Volontaires</a>
     <div ngbDropdownMenu>
-      <button routerLink="volunteer/connection" ngbDropdownItem>Connection</button>
+      <button routerLink="volunteer/connection" ngbDropdownItem>Connexion</button>
       <button routerLink="volunteer/inscription" ngbDropdownItem>Inscription</button>
       <div class="dropdown-divider"></div>
       <button routerLink="volunteer" ngbDropdownItem>Liste</button>
@@ -43,45 +43,21 @@
       <button routerLink="donation/medicament" ngbDropdownItem>Donner</button>
     </div>
   </li>
+  <li ngbDropdown class="nav-item">
+    <a href (click)="false" class="nav-link" ngbDropdownToggle>Nourriture</a>
+    <div ngbDropdownMenu>
+      <button routerLink="donation/food" ngbDropdownItem>Donner</button>
+    </div>
+  </li>
 
 
 </ul>
 </div>
+<br>
+
 
 <router-outlet></router-outlet>
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
-
-<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
-<!--  &lt;!&ndash; Brand &ndash;&gt;-->
-<!--  <a class="navbar-brand" href="#">Human-Helper</a>-->
-<!--  &lt;!&ndash; Links &ndash;&gt;-->
-<!--  <ul class="navbar-nav">-->
-<!--    <li class="nav-item">-->
-<!--      <a class="nav-link" routerLink="#" >-->
-<!--        test-->
-<!--      </a>-->
-<!--    </li>-->
-<!--    &lt;!&ndash; Dropdown &ndash;&gt;-->
-<!--    <li class="nav-item dropdown">-->
-<!--      <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" routerLink="volunteer">-->
-<!--        Volontaires-->
-<!--      </a>-->
-<!--    </li>-->
-<!--  </ul>-->
-<!--  <ul class="navbar-nav ml-auto" >-->
-<!--    <li class="nav-item dropdown">-->
-<!--      <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">-->
-<!--        [username]-->
-<!--      </a>-->
-<!--      <div class="dropdown-menu">-->
-<!--        <a class="dropdown-item" href="http://localhost:4200/inscription">S'inscrire</a>-->
-<!--        <a class="dropdown-item" href="#">Se Connecter</a>-->
-<!--        <a class="dropdown-item" href="#">Profile</a>-->
-<!--      </div>-->
-<!--    </li>-->
-<!--  </ul>-->
-<!--</nav>-->
-
+<!--<div [ngbNavOutlet]="nav" class="mt-2"></div>-->
 
 
 </body>

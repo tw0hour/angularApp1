@@ -1,14 +1,39 @@
-<p>Connexion Associations</p>
 
-<form>
-  <div class="form-group">
-    <label>Nom: </label>
-    <input type="text" name="name" class="form-control" [(ngModel)]="association.name">
+
+<!--<form>-->
+<!--  <div class="form-group">-->
+<!--    <label>Nom: </label>-->
+<!--    <input type="text" name="name" class="form-control" [(ngModel)]="association.name">-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label>Mot de Passe: </label>-->
+<!--    <input type="text" name="password" class="form-control" [(ngModel)]="association.password">-->
+<!--  </div>-->
+<!--  <button type="button" (click)="connection()" class="btn bnt-success">Se Connecter</button>-->
+<!--</form>-->
+
+<form class="container">
+  <div class="form-control text-center">
+    <p>Connexion Associations</p>
   </div>
-  <div class="form-group">
-    <label>Mot de Passe: </label>
-    <input type="text" name="password" class="form-control" [(ngModel)]="association.password">
+  <br>
+
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <label class="sr-only" for="name">Name</label>
+      <input type="text" class="form-control mb-2" id="name" placeholder="Nom" name="name" [(ngModel)]="association.name">
+    </div>
+
+
+      <div class="col-md-4">
+        <label class="sr-only" for="password">Nom</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="association.password">
+      </div>
+
+
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary mb-2" (click)="connection()">Connexion</button>
+    </div>
+
   </div>
-  <button type="button" (click)="connection()" class="btn bnt-success">Se Connecter</button>
 </form>
-

@@ -1,21 +1,42 @@
-<p>Formulaire d'inscription des voluntaires</p>
+<form class="container">
+  <div class="row">
 
-<form>
-  <div class="form-group">
-    <label>Nom: </label>
-    <input type="text" name="name" class="form-control" [(ngModel)]="volunteer.name">
+    <div class="form-control text-center col-md-12">
+      <p> Formulaire d'inscription des Volontaires</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="name">Nom : </label>
+        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="volunteer.name">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="mail">Email : </label>
+        <input type="email" name="mail" id="mail" class="form-control" [(ngModel)]="volunteer.mail">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="password">Mot de Passe : </label>
+        <input type="password" id="password" name="password" class="form-control" [(ngModel)]="volunteer.password">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+<!--        <label for="type">Type : </label>-->
+        <input type="hidden" id="type" name="type" value=" " class="form-control" [(ngModel)]="volunteer.type">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="inscription()" class="btn btn-primary mb-2 col-md-2">S'inscrire</button>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label>email: </label>
-    <input type="email" name="mail" class="form-control" [(ngModel)]="volunteer.mail">
-  </div>
-  <div class="form-group">
-    <label>Mot de Passe: </label>
-    <input type="password" name="password" class="form-control" [(ngModel)]="volunteer.password">
-  </div>
-  <div class="form-group">
-    <label>Type: </label>
-    <input type="text" name="type" class="form-control" [(ngModel)]="volunteer.type">
-  </div>
-  <button type="button" (click)="inscription()" class="btn bnt-success">S'inscrire</button>
 </form>
