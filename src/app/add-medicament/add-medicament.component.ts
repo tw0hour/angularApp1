@@ -4,10 +4,10 @@ import {MedicamentServices} from "../services/medicament.services";
 
 @Component({
   selector: 'app-medicament',
-  templateUrl: './medicament.component.html',
-  styleUrls: ['./medicament.component.scss']
+  templateUrl: './add-medicament.component.html',
+  styleUrls: ['./add-medicament.component.scss']
 })
-export class MedicamentComponent implements OnInit {
+export class AddMedicamentComponent implements OnInit {
 
   medicament = new Medicament();
 
@@ -20,11 +20,6 @@ export class MedicamentComponent implements OnInit {
     this.medicamentService.addMedicament(this.medicament).subscribe(medicamentAdded => {
       console.log(medicamentAdded);
     });
-  }
-
-  getMedicamentById(){
-    if(this.medicament.id === undefined) return
-    this.medicamentService.getMedicamentById(this.medicament.id);
   }
 
 }

@@ -1,1 +1,20 @@
-<p>camp works!</p>
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Cagnotte</th> <th>mail</th> </tr>
+        </thead>
+        <tbody *ngFor="let camp of camps">
+        <tr>
+          <td>{{camp.id}}</td>
+          <td>{{camp.nbPeople}}</td>
+          <td>{{camp.city}}</td>
+          <td>{{camp.address}}</td>
+          <td>{{camp.postalCode}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

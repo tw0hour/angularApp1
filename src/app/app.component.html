@@ -35,18 +35,33 @@
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Camp</a>
     <div ngbDropdownMenu>
       <button routerLink="camp/report" ngbDropdownItem>report camp</button>
+      <div class="dropdown-divider"></div>
+      <button routerLink="camps" class="dropdown-item" ngbDropdownItem>Liste</button>
     </div>
 
   </li><li ngbDropdown class="nav-item">
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Médicaments</a>
     <div ngbDropdownMenu>
       <button routerLink="donation/medicament" ngbDropdownItem>Donner</button>
+      <div class="dropdown-divider"></div>
+      <button routerLink="medicaments" class="dropdown-item" ngbDropdownItem>Liste</button>
     </div>
   </li>
   <li ngbDropdown class="nav-item">
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Nourriture</a>
     <div ngbDropdownMenu>
       <button routerLink="donation/food" ngbDropdownItem>Donner</button>
+      <div class="dropdown-divider"></div>
+      <button routerLink="foods" class="dropdown-item" ngbDropdownItem>Liste</button>
+    </div>
+  </li>
+
+  <li ngbDropdown class="nav-item">
+    <a href (click)="false" class="nav-link" ngbDropdownToggle>Vêtements</a>
+    <div ngbDropdownMenu>
+      <button routerLink="donation/cloth" class="dropdown-item" ngbDropdownItem>Ajouter</button>
+      <div class="dropdown-divider"></div>
+      <button routerLink="cloths" class="dropdown-item" ngbDropdownItem>Liste</button>
     </div>
   </li>
 

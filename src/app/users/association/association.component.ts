@@ -11,7 +11,7 @@ export class AssociationComponent implements OnInit {
 
   associations : Association[] | undefined;
 
-  constructor(private associationService : AssociationServices, private router :Router) {
+  constructor(private associationService : AssociationServices) {
 
   }
 

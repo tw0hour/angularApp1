@@ -2,8 +2,6 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Medicament} from "../models/medicament.model";
 import {Observable} from "rxjs";
-import {Association} from "../models/associations.model";
-import {AssociationServices} from "./association-services.service";
 import {CookieService} from "ngx-cookie-service";
 
 const httpOptions = {

@@ -4,11 +4,11 @@
 <form>
   <div class="form-group">
     <label>Name: </label>
-    <input type="text" name="nbPeople" class="form-control" [(ngModel)]="medicament.name">
+    <input type="text" name="nbPeople" class="form-control" [(ngModel)]="add-medicament.name">
   </div>
   <div class="form-group">
     <label>Date de péremption : </label>
-    <input type="date" name="city" class="form-control" [(ngModel)]="medicament.expirationDate">
+    <input type="date" name="city" class="form-control" [(ngModel)]="add-medicament.expirationDate">
   </div>
   <button type="button" (click)="addMedicament()" class="btn bnt-success">Ajouter au stock</button>
 </form>

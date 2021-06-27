@@ -12,9 +12,12 @@ import { AssociationsConnectionComponent } from './users/associations-connection
 import { CampReportComponent } from './camp-report/camp-report.component';
 import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volunteer-inscription.component";
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
-import { MedicamentComponent } from './medicament/medicament.component';
+import { AddMedicamentComponent } from './add-medicament/add-medicament.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { MedicamentComponent } from './medicament/medicament.component';
+import { FoodComponent } from './food/food.component';
+import { ClothComponent } from './cloth/cloth.component';
 
 
 @NgModule({
@@ -29,8 +32,11 @@ import { AddFoodComponent } from './add-food/add-food.component';
     AssociationsInscriptionComponent,
     AssociationsConnectionComponent,
     CampReportComponent,
+    AddMedicamentComponent,
+    AddFoodComponent,
     MedicamentComponent,
-    AddFoodComponent
+    FoodComponent,
+    ClothComponent
   ],
     imports: [
         BrowserModule,
