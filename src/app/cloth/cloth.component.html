@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Taille</th> <th>Genre</th> </tr>
+        </thead>
+        <tbody *ngFor="let cloth of cloths">
+        <tr>
+          <td>{{cloth.id}}</td>
+          <td>{{cloth.name}}</td>
+          <td>{{cloth.size}}</td>
+          <td>{{cloth.gender}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

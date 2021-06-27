@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Type</th> <th>Date de péremtpion</th> </tr>
+        </thead>
+        <tbody *ngFor="let food of foods">
+        <tr>
+          <td>{{food.id}}</td>
+          <td>{{food.name}}</td>
+          <td>{{food.type_food_id}}</td>
+          <td>{{food.expirationDate}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
