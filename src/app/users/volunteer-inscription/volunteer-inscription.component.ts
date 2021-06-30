@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {VolunteerService} from "../../services/volunteer.service";
-import {Router} from "@angular/router";
 import {VolunteerModel} from "../../models/volunteer.model";
 
 @Component({
@@ -12,7 +11,7 @@ export class VolunteerInscriptionComponent implements OnInit {
 
   volunteer = new VolunteerModel();
 
-  constructor(private volunteerService: VolunteerService, private router: Router) { }
+  constructor(private volunteerService: VolunteerService) { }
 
   ngOnInit(): void {
 

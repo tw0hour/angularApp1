@@ -1,12 +1,12 @@
 <form class="container">
   <div class="row">
     <div class="form-control text-center col-md-12">
-      <p>Signaler un nouveau camp</p>
+      <p>Mise à jour du camp</p>
     </div>
 
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <label for="nbPeople">Nombre de personnes : </label>
+        <label for="nbPeople">Nombre de personnes :</label>
         <input type="number" name="nbPeople" id="nbPeople" class="form-control" [(ngModel)]="camp.nbPeople">
       </div>
     </div>
@@ -20,7 +20,7 @@
 
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <label for="address">Addresse : </label>
+        <label for="address">Adresse :</label>
         <input type="text" id="address" name="address" class="form-control" [(ngModel)]="camp.address">
       </div>
     </div>
@@ -36,7 +36,7 @@
     <br>
     <div class="row justify-content-md-center">
       <label></label>
-      <button type="button" (click)="reportCamp()" class="btn btn-primary mb-2 col-md-2">Rapporter</button>
+      <button type="button" (click)="updateCamp()" class="btn btn-primary mb-2 col-md-2">Mettre à jour</button>
     </div>
 
   </div>

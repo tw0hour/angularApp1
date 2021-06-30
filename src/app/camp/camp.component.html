@@ -3,17 +3,19 @@
     <div class="card-body">
       <table class="table table-striped">
         <thead>
-        <tr> <th>Id</th><th>Nom</th> <th>Cagnotte</th> <th>mail</th> </tr>
+        <tr> <th>Id</th><th>Nombre de personne</th> <th>Ville</th> <th>Adresse</th> <th>Code Postal</th> </tr>
         </thead>
-        <tbody *ngFor="let camp of camps">
-        <tr>
-          <td>{{camp.id}}</td>
-          <td>{{camp.nbPeople}}</td>
-          <td>{{camp.city}}</td>
-          <td>{{camp.address}}</td>
-          <td>{{camp.postalCode}}</td>
-        </tr>
-        </tbody>
+          <tbody *ngFor="let camp of camps">
+          <tr>
+            <td>{{camp.id}}</td>
+            <td>{{camp.nbPeople}}</td>
+            <td>{{camp.city}}</td>
+            <td>{{camp.address}}</td>
+            <td>{{camp.postalCode}}</td>
+            <td> <button type="button" (click)="goToCampUpdateForm(camp.id)">Mettre à jour</button> </td>
+            <td> <button type="button" (click)="deleteCampById(camp.id)">Supprimer</button> </td>
+          </tr>
+          </tbody>
       </table>
     </div>
   </div>

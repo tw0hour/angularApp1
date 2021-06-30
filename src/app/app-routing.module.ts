@@ -13,6 +13,7 @@ import {CampComponent} from "./camp/camp.component";
 import {MedicamentComponent} from "./medicament/medicament.component";
 import {FoodComponent} from "./food/food.component";
 import {ClothComponent} from "./cloth/cloth.component";
+import {CampUpdateComponent} from "./camp-update/camp-update.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
   {path: "camp/report", component: CampReportComponent},
+  {path: "camp/update", component: CampUpdateComponent},
   {path: "donation/medicament", component: AddMedicamentComponent},
   {path: "donation/food", component: AddFoodComponent}
 ];

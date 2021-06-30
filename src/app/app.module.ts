@@ -18,6 +18,7 @@ import { AddFoodComponent } from './add-food/add-food.component';
 import { MedicamentComponent } from './medicament/medicament.component';
 import { FoodComponent } from './food/food.component';
 import { ClothComponent } from './cloth/cloth.component';
+import { CampUpdateComponent } from './camp-update/camp-update.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ClothComponent } from './cloth/cloth.component';
     AddFoodComponent,
     MedicamentComponent,
     FoodComponent,
-    ClothComponent
+    ClothComponent,
+    CampUpdateComponent
   ],
     imports: [
         BrowserModule,

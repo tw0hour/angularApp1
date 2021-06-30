@@ -30,7 +30,6 @@ export class VolunteerService {
   }
 
   connection(name: string | undefined, password: string | undefined): boolean | null{
-    //KO : la fonction ne passe pas dans le 2ème if
     if(name === undefined || password === undefined){
       alert("Tous les champs doivent être remplis !");
       return null;
