@@ -3,6 +3,7 @@ import {Injectable} from "@angular/core";
 import {Medicament} from "../models/medicament.model";
 import {Observable} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
+import {Camp} from "../models/camp.model";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -44,6 +45,32 @@ export class MedicamentServices {
 
   getAllMedicament(): Observable<Medicament[]>{
     return this.http.get<Medicament[]>(this.apiUrl, httpOptions);
+  }
+
+  updateMedicament(medoc: Medicament){
+    console.log("-------medicaments.services.ts-------");
+    console.log("-------updateMedicament()-------");
+    console.log("Cookie Medoc id : " + this.cookieService.get('medocId'));
+
+    const idCookieMedoc = parseInt(this.cookieService.get('medocId'));
+
+    console.log("Medoc id : " + medoc.id);
+    console.log("Camp name : " + medoc.name);
+    console.log("Camp expirationDate : " + medoc.expirationDate);
+    console.log("Camp volunteer_id : " + medoc.volunteer_id);
+    console.log("Camp delivery_id : " + medoc.delivery_id);
+    console.log("-------------------------------------");
+
+    this.http.put<Medicament>(this.apiUrl + idCookieMedoc, medoc, httpOptions).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  deleteMedicamentById(idMedoc: number | undefined){
+    if(!idMedoc){
+      console.log("Id manquant");
+    }
+    return this.http.delete<Medicament>(this.apiUrl + idMedoc, httpOptions);
   }
 
 }

@@ -26,7 +26,7 @@ export class CampComponent implements OnInit {
 
   deleteCampById(idCamp: number | undefined){
     if(!idCamp) {
-      console.log("Id Manquant")
+      console.log("Id Manquant");
       return;
     }
 
@@ -48,6 +48,7 @@ export class CampComponent implements OnInit {
     console.log("--- camp.component ---");
     console.log("--- goToCampUpdateFrom() ---");
     console.log("IdCamp : " + idCamp);
+    console.log("-----------------------------");
 
     this.cookieService.set('campId', idCamp.toString(), {expires: 1, path: "/"});
 
@@ -58,10 +59,6 @@ export class CampComponent implements OnInit {
 
     this.router.navigate(["camp/update"]);
   }
-
-
-
-
 
 
 }

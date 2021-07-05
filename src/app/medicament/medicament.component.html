@@ -10,6 +10,8 @@
           <td>{{medicament.id}}</td>
           <td>{{medicament.name}}</td>
           <td>{{medicament.expirationDate}}</td>
+          <td> <button type="button" (click)="goToMedicamentUpdateForm(medicament.id)">Mettre à jour</button> </td>
+          <td> <button type="button" (click)="deleteMedicamentById(medicament.id)">Supprimer</button> </td>
         </tr>
         </tbody>
       </table>

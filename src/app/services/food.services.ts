@@ -3,6 +3,7 @@ import {Injectable} from "@angular/core";
 import {Food} from "../models/food.model";
 import {Observable} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
+import {Camp} from "../models/camp.model";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -47,7 +48,28 @@ export class FoodServices {
     return this.http.get<Food>(this.apiUrl + idFood, httpOptions);
   }
 
+  updateFood(food: Food){
+
+    console.log("-------food.services.ts-------");
+    console.log("-------updateFood()-------");
+    console.log("Cookie Food id : " + this.cookieService.get('foodId'));
+    const idCookieFood = parseInt(this.cookieService.get('foodId'));
+
+    console.log("Food id : " + food.id);
+    console.log("Food nbPeople : " + food.name);
+    console.log("Food city : " + food.expirationDate);
+    console.log("-------------------------------------");
+
+    this.http.put<Food>(this.apiUrl + idCookieFood, food, httpOptions).subscribe( data =>{
+      console.log(data);
+    });
+  }
+
+
   deleteFoodById(idFood : number) {
+    if(!idFood){
+      console.log("Id manquant");
+    }
     return this.http.delete(this.apiUrl + idFood, httpOptions);
   }
 

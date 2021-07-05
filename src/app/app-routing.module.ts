@@ -14,12 +14,14 @@ import {MedicamentComponent} from "./medicament/medicament.component";
 import {FoodComponent} from "./food/food.component";
 import {ClothComponent} from "./cloth/cloth.component";
 import {CampUpdateComponent} from "./camp-update/camp-update.component";
+import {MedicamentUpdateComponent} from "./medicament-update/medicament-update.component";
 
 
 const routes: Routes = [
   {path:"associations",component:AssociationComponent},
   {path:"camps",component: CampComponent},
   {path:"medicaments",component: MedicamentComponent},
+  {path:"medicament/update",component: MedicamentUpdateComponent},
   {path:"foods",component: FoodComponent},
   {path:"cloths",component: ClothComponent},
   {path : "volunteer", component : VolunteerComponent},

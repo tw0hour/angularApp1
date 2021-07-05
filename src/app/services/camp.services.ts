@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Camp} from "../models/camp.model";
-import {Medicament} from "../models/medicament.model";
 import {CookieService} from "ngx-cookie-service";
 
 const httpOptions = {
@@ -42,21 +41,24 @@ export class CampServices {
     return this.http.get<Camp>(this.apiUrl + idCamp, httpOptions);
   }
 
-  updateCamp(camp: Camp): Observable<Camp> | null{
+  updateCamp(camp: Camp){
+    console.log("-------camp.services.ts-------");
+    console.log("-------updateCamp()-------");
     console.log("Cookie Camp id : " + this.cookieService.get('campId'));
-    camp.id = parseInt(this.cookieService.get('campId'));
-    if(!camp.id){
-      console.log("Id manquant");
-      return null;
-    }
+
+    const idCookieCamp = parseInt(this.cookieService.get('campId'));
 
     console.log("Camp id : " + camp.id);
     console.log("Camp nbPeople : " + camp.nbPeople);
     console.log("Camp city : " + camp.city);
     console.log("Camp address : " + camp.address);
     console.log("Camp postalCode : " + camp.postalCode);
+    console.log("-------------------------------------");
 
-    return this.http.put<Camp>(this.apiUrl + camp.id, camp, httpOptions);
+    this.http.put<Camp>(this.apiUrl + idCookieCamp, camp, httpOptions).subscribe( data =>{
+      console.log(data);
+    });
+
   }
 
   deleteCampById(idCamp: number | undefined){
