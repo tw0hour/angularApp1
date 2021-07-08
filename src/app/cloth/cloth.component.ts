@@ -31,6 +31,7 @@ export class ClothComponent implements OnInit {
     this.clothServices.deleteClothById(idCloth).subscribe(clothDeleted => {
       console.log(clothDeleted);
     });
+    window.location.reload();
   }
 
   /**

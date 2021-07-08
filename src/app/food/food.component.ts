@@ -31,6 +31,8 @@ export class FoodComponent implements OnInit {
     this.foodServices.deleteFoodById(idFood).subscribe(foodDeleted => {
       console.log(foodDeleted);
     });
+
+    window.location.reload();
   }
 
   /**

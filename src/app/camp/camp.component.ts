@@ -33,6 +33,7 @@ export class CampComponent implements OnInit {
     this.campService.deleteCampById(idCamp).subscribe(campDeleted => {
       console.log(campDeleted);
     });
+    window.location.reload();
   }
 
   /**

@@ -1,0 +1,37 @@
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p>Mise à jour du vêtement</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="nbPeople">Nom :</label>
+        <input type="text" name="nbPeople" id="nbPeople" class="form-control" [(ngModel)]="cloth.name">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Taille : </label>
+        <input type="text" id="size" name="city" class="form-control" [(ngModel)]="cloth.size">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Sexe : </label>
+        <input type="date" id="gender" name="city" class="form-control" [(ngModel)]="cloth.gender">
+      </div>
+    </div>
+
+    <br>
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="updateCloth()" class="btn btn-primary mb-2 col-md-2">Mettre à jour</button>
+    </div>
+
+  </div>
+</form>
+
+

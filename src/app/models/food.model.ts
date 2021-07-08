@@ -5,4 +5,5 @@ export class Food {
   volunteer_id?:number;
   type_food_id?:number;
   delivery_id?:number;
+  association_id?:number;
 }

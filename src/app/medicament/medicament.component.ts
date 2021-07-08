@@ -49,13 +49,12 @@ export class MedicamentComponent implements OnInit {
       console.log("Id Manquant");
       return;
     }
+
     this.medicamentService.deleteMedicamentById(idMedoc).subscribe(medocDeleted => {
       console.log(medocDeleted);
     });
+
+    window.location.reload();
   }
-
-
-
-
 
 }

@@ -19,18 +19,19 @@ export class FoodServices {
   }
 
   addFood(food: Food){
-    console.log("Id typeFood: " + food.type_food_id);
-    if(!food.name || !food.expirationDate || !food.volunteer_id  || !food.type_food_id){
+    console.log("---food.services / addFood()---");
+    console.log("food.type_food_id : " + food.type_food_id);
+    if(!food.name || !food.expirationDate || !food.association_id  || !food.type_food_id){
       alert("Veuillez rempir tous les champs");
     }
 
-    food.volunteer_id = parseInt(this.cookieService.get('associationId'));
+    food.association_id = parseInt(this.cookieService.get('associationId'));
 
     console.log("Nom Food:" + food.name);
-    console.log("Id Cookie ajout typeFood:" + food.volunteer_id);
+    console.log("associationId Cookie :" + food.association_id);
     console.log("Date addFood : " + food.expirationDate);
 
-    if(!food.volunteer_id){
+    if(!food.association_id){
       alert("Id volontaire manquant, problème avec le cookie");
     }
     return this.http.post<Food>(this.apiUrl, food, httpOptions);
