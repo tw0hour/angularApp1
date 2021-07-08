@@ -39,5 +39,4 @@ export class TypeClothServices {
     return this.http.delete(this.apiUrl + idGenderCloth, httpOptions);
   }
 
-
 }

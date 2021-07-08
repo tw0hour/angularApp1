@@ -56,8 +56,6 @@ export class ClothServices {
     });
   }
 
-
-
   deleteClothById(idCloth: number): Observable<Cloth>{
     if(!idCloth){
       alert("L'id n'est pas renseign");

@@ -1,6 +1,5 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {GenderCloth} from "../models/genderCloth.model";
 import {PlanningCamp} from "../models/planningCamp.model";
 import {Observable} from "rxjs";
 

@@ -65,7 +65,6 @@ export class FoodServices {
     });
   }
 
-
   deleteFoodById(idFood : number) {
     if(!idFood){
       console.log("Id manquant");

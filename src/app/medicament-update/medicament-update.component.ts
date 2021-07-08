@@ -20,5 +20,4 @@ export class MedicamentUpdateComponent implements OnInit {
     this.medicamentServices.updateMedicament(this.medicament);
   }
 
-
 }

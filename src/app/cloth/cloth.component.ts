@@ -59,5 +59,4 @@ export class ClothComponent implements OnInit {
     this.router.navigate(["cloth/update"]);
   }
 
-
 }
