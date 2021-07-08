@@ -24,27 +24,27 @@ const routes: Routes = [
   {path:"associations",component:AssociationComponent},
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
-  {path: "statistics", component: StatisticsComponent},
 
   {path:"camps",component: CampComponent},
   {path: "camp/report", component: CampReportComponent},
   {path: "camp/update", component: CampUpdateComponent},
 
-  {path:"medicaments",component: MedicamentComponent},
-  {path: "medicament/add", component: MedicamentAddComponent},
-  {path:"medicament/update",component: MedicamentUpdateComponent},
+  {path:"cloths",component: ClothComponent},
+  {path:"cloth/update",component: ClothUpdateComponent},
 
   {path:"foods",component: FoodComponent},
   {path: "food/add", component: FoodAddComponent},
   {path:"food/update",component: FoodUpdateComponent},
 
-  {path:"cloths",component: ClothComponent},
-  {path:"cloth/update",component: ClothUpdateComponent},
+  {path:"medicaments",component: MedicamentComponent},
+  {path: "medicament/add", component: MedicamentAddComponent},
+  {path:"medicament/update",component: MedicamentUpdateComponent},
 
   {path :"volunteer", component : VolunteerComponent},
   {path :"volunteer/inscription", component : VolunteerInscriptionComponent},
-  {path :"volunteer/connection", component : VolunteerConnectionComponent}
+  {path :"volunteer/connection", component : VolunteerConnectionComponent},
 
+  {path: "statistics", component: StatisticsComponent}
 
 ];
 
