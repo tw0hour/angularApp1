@@ -22,6 +22,7 @@ import { CampUpdateComponent } from './camp-update/camp-update.component';
 import { MedicamentUpdateComponent } from './medicament-update/medicament-update.component';
 import { FoodUpdateComponent } from './food-update/food-update.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { CommonModule } from "@angular/common";
 import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
 
 
@@ -49,6 +50,7 @@ import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
     ClothUpdateComponent
   ],
     imports: [
+        CommonModule,
         BrowserModule,
         AppRoutingModule,
         AppRoutingModule,
