@@ -23,7 +23,7 @@ import { MedicamentUpdateComponent } from './medicament-update/medicament-update
 import { FoodUpdateComponent } from './food-update/food-update.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CommonModule } from "@angular/common";
-//import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
+import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
 
 
 @NgModule({
@@ -47,7 +47,7 @@ import { CommonModule } from "@angular/common";
     MedicamentUpdateComponent,
     FoodUpdateComponent,
     StatisticsComponent,
-    //ClothUpdateComponent
+    ClothUpdateComponent
   ],
     imports: [
         CommonModule,

@@ -17,7 +17,7 @@ import {CampUpdateComponent} from "./camp-update/camp-update.component";
 import {MedicamentUpdateComponent} from "./medicament-update/medicament-update.component";
 import {StatisticsComponent} from "./statistics/statistics.component";
 import {FoodUpdateComponent} from "./food-update/food-update.component";
-//import {ClothUpdateComponent} from "./cloth-update/cloth-update.component";
+import {ClothUpdateComponent} from "./cloth-update/cloth-update.component";
 
 
 const routes: Routes = [
@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:"foods",component: FoodComponent},
   {path:"food/update",component: FoodUpdateComponent},
   {path:"cloths",component: ClothComponent},
-  //{path:"cloth/update",component: ClothUpdateComponent},
+  {path:"cloth/update",component: ClothUpdateComponent},
   {path : "volunteer", component : VolunteerComponent},
   {path : "volunteer/inscription", component : VolunteerInscriptionComponent},
   {path : "volunteer/connection", component : VolunteerConnectionComponent},
