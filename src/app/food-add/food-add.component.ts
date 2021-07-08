@@ -6,10 +6,10 @@ import {TypeFood} from "../models/typeFood.model";
 
 @Component({
   selector: 'app-add-food',
-  templateUrl: './add-food.component.html',
-  styleUrls: ['./add-food.component.scss']
+  templateUrl: './food-add.component.html',
+  styleUrls: ['./food-add.component.scss']
 })
-export class AddFoodComponent implements OnInit {
+export class FoodAddComponent implements OnInit {
 
   food = new Food();
   foodType = new TypeFood();
@@ -24,7 +24,7 @@ export class AddFoodComponent implements OnInit {
   }
 
   addFood(){
-    console.log("---add-food.component / addFood()---");
+    console.log("---food-add.component / addFood()---");
     console.log("Id séléctionné : " + this.foodType.id);
 
     this.food.type_food_id = this.foodType.id;

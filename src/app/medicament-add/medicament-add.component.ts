@@ -4,10 +4,10 @@ import {MedicamentServices} from "../services/medicament.services";
 
 @Component({
   selector: 'app-medicament',
-  templateUrl: './add-medicament.component.html',
-  styleUrls: ['./add-medicament.component.scss']
+  templateUrl: './medicament-add.component.html',
+  styleUrls: ['./medicament-add.component.scss']
 })
-export class AddMedicamentComponent implements OnInit {
+export class MedicamentAddComponent implements OnInit {
 
   medicament = new Medicament();
 

@@ -12,9 +12,9 @@ import { AssociationsConnectionComponent } from './users/associations-connection
 import { CampReportComponent } from './camp-report/camp-report.component';
 import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volunteer-inscription.component";
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
-import { AddMedicamentComponent } from './add-medicament/add-medicament.component';
+import { MedicamentAddComponent } from './medicament-add/medicament-add.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AddFoodComponent } from './add-food/add-food.component';
+import { FoodAddComponent } from './food-add/food-add.component';
 import { MedicamentComponent } from './medicament/medicament.component';
 import { FoodComponent } from './food/food.component';
 import { ClothComponent } from './cloth/cloth.component';
@@ -37,8 +37,8 @@ import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
     AssociationsInscriptionComponent,
     AssociationsConnectionComponent,
     CampReportComponent,
-    AddMedicamentComponent,
-    AddFoodComponent,
+    MedicamentAddComponent,
+    FoodAddComponent,
     MedicamentComponent,
     FoodComponent,
     ClothComponent,

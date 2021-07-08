@@ -7,8 +7,8 @@ import {AssociationsConnectionComponent} from "./users/associations-connection/a
 import {CampReportComponent} from "./camp-report/camp-report.component";
 import {VolunteerInscriptionComponent} from "./users/volunteer-inscription/volunteer-inscription.component";
 import {VolunteerConnectionComponent} from "./users/volunteer-connection/volunteer-connection.component";
-import {AddMedicamentComponent} from "./add-medicament/add-medicament.component";
-import {AddFoodComponent} from "./add-food/add-food.component";
+import {MedicamentAddComponent} from "./medicament-add/medicament-add.component";
+import {FoodAddComponent} from "./food-add/food-add.component";
 import {CampComponent} from "./camp/camp.component";
 import {MedicamentComponent} from "./medicament/medicament.component";
 import {FoodComponent} from "./food/food.component";
@@ -22,23 +22,30 @@ import {ClothUpdateComponent} from "./cloth-update/cloth-update.component";
 
 const routes: Routes = [
   {path:"associations",component:AssociationComponent},
-  {path:"camps",component: CampComponent},
-  {path:"medicaments",component: MedicamentComponent},
-  {path:"medicament/update",component: MedicamentUpdateComponent},
-  {path:"foods",component: FoodComponent},
-  {path:"food/update",component: FoodUpdateComponent},
-  {path:"cloths",component: ClothComponent},
-  {path:"cloth/update",component: ClothUpdateComponent},
-  {path : "volunteer", component : VolunteerComponent},
-  {path : "volunteer/inscription", component : VolunteerInscriptionComponent},
-  {path : "volunteer/connection", component : VolunteerConnectionComponent},
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
+  {path: "statistics", component: StatisticsComponent},
+
+  {path:"camps",component: CampComponent},
   {path: "camp/report", component: CampReportComponent},
   {path: "camp/update", component: CampUpdateComponent},
-  {path: "donation/medicament", component: AddMedicamentComponent},
-  {path: "donation/food", component: AddFoodComponent},
-  {path: "statistics", component: StatisticsComponent}
+
+  {path:"medicaments",component: MedicamentComponent},
+  {path: "medicament/add", component: MedicamentAddComponent},
+  {path:"medicament/update",component: MedicamentUpdateComponent},
+
+  {path:"foods",component: FoodComponent},
+  {path: "food/add", component: FoodAddComponent},
+  {path:"food/update",component: FoodUpdateComponent},
+
+  {path:"cloths",component: ClothComponent},
+  {path:"cloth/update",component: ClothUpdateComponent},
+
+  {path :"volunteer", component : VolunteerComponent},
+  {path :"volunteer/inscription", component : VolunteerInscriptionComponent},
+  {path :"volunteer/connection", component : VolunteerConnectionComponent}
+
+
 ];
 
 @NgModule({
