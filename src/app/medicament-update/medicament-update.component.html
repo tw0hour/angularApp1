@@ -1,0 +1,32 @@
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p>Mise à jour du Médicament</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="nbPeople">Nom :</label>
+        <input type="text" name="nbPeople" id="nbPeople" class="form-control" [(ngModel)]="medicament.name">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="city">Date de péremtpion : </label>
+        <input type="date" id="city" name="city" class="form-control" [(ngModel)]="medicament.expirationDate">
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="updateMedicament()" class="btn btn-primary mb-2 col-md-2">Mettre à jour</button>
+    </div>
+
+  </div>
+</form>
+
+
+

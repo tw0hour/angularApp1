@@ -21,6 +21,7 @@ import { ClothComponent } from './cloth/cloth.component';
 import { CampUpdateComponent } from './camp-update/camp-update.component';
 import { MedicamentUpdateComponent } from './medicament-update/medicament-update.component';
 import { FoodUpdateComponent } from './food-update/food-update.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FoodUpdateComponent } from './food-update/food-update.component';
     ClothComponent,
     CampUpdateComponent,
     MedicamentUpdateComponent,
-    FoodUpdateComponent
+    FoodUpdateComponent,
+    StatisticsComponent
   ],
     imports: [
         BrowserModule,

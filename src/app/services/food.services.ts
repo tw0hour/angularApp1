@@ -3,7 +3,6 @@ import {Injectable} from "@angular/core";
 import {Food} from "../models/food.model";
 import {Observable} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
-import {Camp} from "../models/camp.model";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

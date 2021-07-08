@@ -24,6 +24,8 @@ export class AddFoodComponent implements OnInit {
   }
 
   addFood(){
+    this.food.type_food_id = this.foodType.id;
+    console.log("Id type food : " + this.foodType.id)
     this.foodServices.addFood(this.food).subscribe();
   }
 

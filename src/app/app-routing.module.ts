@@ -15,6 +15,7 @@ import {FoodComponent} from "./food/food.component";
 import {ClothComponent} from "./cloth/cloth.component";
 import {CampUpdateComponent} from "./camp-update/camp-update.component";
 import {MedicamentUpdateComponent} from "./medicament-update/medicament-update.component";
+import {StatisticsComponent} from "./statistics/statistics.component";
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: "camp/report", component: CampReportComponent},
   {path: "camp/update", component: CampUpdateComponent},
   {path: "donation/medicament", component: AddMedicamentComponent},
-  {path: "donation/food", component: AddFoodComponent}
+  {path: "donation/food", component: AddFoodComponent},
+  {path: "statistics", component: StatisticsComponent}
 ];
 
 @NgModule({

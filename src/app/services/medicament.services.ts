@@ -3,7 +3,6 @@ import {Injectable} from "@angular/core";
 import {Medicament} from "../models/medicament.model";
 import {Observable} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
-import {Camp} from "../models/camp.model";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -24,13 +23,13 @@ export class MedicamentServices {
     if(!medoc.name || !medoc.expirationDate){
       alert("Tous les champs doivent être remplis !");
     }
-    medoc.volunteer_id = parseInt(this.cookieService.get('associationId'));
+    medoc.association_id = parseInt(this.cookieService.get('associationId'));
 
     console.log("Nom médicament:" + medoc.name);
-    console.log("Id Cookie ajout médicament:" + medoc.volunteer_id);
+    console.log("Id Cookie ajout médicament:" + medoc.association_id);
     console.log("Date ajout médicament:" + medoc.expirationDate);
 
-    if(!medoc.volunteer_id){
+    if(!medoc.association_id){
       alert("Id volontaire manquant, problème avec le cookie");
     }
     return this.http.post<Medicament>(this.apiUrl + "association/" , medoc, httpOptions);
