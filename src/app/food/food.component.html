@@ -11,6 +11,8 @@
           <td>{{food.name}}</td>
           <td>{{food.type_food_id}}</td>
           <td>{{food.expirationDate}}</td>
+          <td> <button type="button" (click)="goToFoodUpdateForm(food.id)">Mettre à jour</button> </td>
+          <td> <button type="button" (click)="deleteFoodById(food.id)">Supprimer</button> </td>
         </tr>
         </tbody>
       </table>

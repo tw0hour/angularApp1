@@ -36,7 +36,7 @@ export class CampComponent implements OnInit {
   }
 
   /**
-   * Redirige vers le formulaire de mise à jour mettent l'id du camp dans un Cookie
+   * Redirige vers le formulaire de mise à jour en mettant l'id du camp dans un Cookie
    */
   goToCampUpdateForm(idCamp: number | undefined){
     if(!idCamp) {
