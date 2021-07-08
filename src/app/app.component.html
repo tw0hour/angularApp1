@@ -21,17 +21,9 @@
     </div>
   </li>
 
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Volontaires</a>
-    <div ngbDropdownMenu>
-      <button routerLink="volunteer/connection" ngbDropdownItem>Connexion</button>
-      <button routerLink="volunteer/inscription" ngbDropdownItem>Inscription</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="volunteer" ngbDropdownItem>Liste</button>
-    </div>
-  </li>
+<ng-template [ngIf]="isAuth == true">
 
-  <li ngbDropdown class="nav-item">
+  <li  ngbDropdown class="nav-item">
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Camp</a>
     <div ngbDropdownMenu>
       <button routerLink="camp/report" ngbDropdownItem>report camp</button>
@@ -39,7 +31,8 @@
       <button routerLink="camps" class="dropdown-item" ngbDropdownItem>Liste</button>
     </div>
 
-  </li><li ngbDropdown class="nav-item">
+  </li>
+  <li ngbDropdown class="nav-item">
     <a href (click)="false" class="nav-link" ngbDropdownToggle>Médicaments</a>
     <div ngbDropdownMenu>
       <button routerLink="donation/medicament" ngbDropdownItem>Donner</button>
@@ -69,12 +62,14 @@
     <a href (click)="false" routerLink="statistics" class="nav-link" ngbDropdownToggle>Statistiques</a>
   </li>
 
+</ng-template>
 
 </ul>
+  <div>
+    <button type="submit" class="btn btn-primary mb-2" (click)="logout()">Logout</button>
+  </div>
 </div>
 <br>
-
-
 <router-outlet></router-outlet>
 <!--<div [ngbNavOutlet]="nav" class="mt-2"></div>-->
 

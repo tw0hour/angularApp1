@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Association } from "../models/associations.model";
 import { Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -15,7 +16,7 @@ export class AssociationServices {
 
   apiUrl: string = "http://localhost:3000/association/";
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient,private router:Router){
   }
 
   listAssociation():Observable<Association[]>{
@@ -49,7 +50,8 @@ export class AssociationServices {
       return null;
     }
     if(this.http.post(this.apiUrl + "/connection", httpOptions)){
-      alert("Bonjour " + name + " !");
+      //alert("Bonjour " + name + " !");
+      setInterval(()=>{window.location.reload();},500);//window.location.reload();
       return true;
     }
     else{

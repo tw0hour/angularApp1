@@ -32,10 +32,8 @@ export class AssociationsConnectionComponent implements OnInit {
       const value: string = this.cookieService.get('associationId');
       console.log("Cookie connection :" + value);
     });
-
-
-
-
   }
+
+
 
 }
