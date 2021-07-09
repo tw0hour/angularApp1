@@ -13,10 +13,20 @@ export class AppComponent {
 
   constructor(private cookieService: CookieService,private router: Router) {}
 
+  ngOnInit(): void{
+    if (!this.isAuth){
+      this.router.navigate(["association/connection"]).then();
+    }else {
+      this.router.navigate([""]).then();
+    }
+
+  }
+
   logout(){
     this.cookieService.delete('associationId',"/");
+    // pour laisser le temps de prendre en compte la suppression du cookie (front de la navbar)
     setInterval(()=>{window.location.reload();},500);
-    this.router.navigate(["association/connection"]);
+    this.router.navigate(["association/connection"]).then();
   }
 }
 

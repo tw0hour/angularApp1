@@ -21,28 +21,28 @@ import {ClothUpdateComponent} from "./cloth-update/cloth-update.component";
 
 
 const routes: Routes = [
-  {path:"associations",component:AssociationComponent},
+  {path: "associations",component:AssociationComponent},
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
 
-  {path:"camps",component: CampComponent},
+  {path: "camps",component: CampComponent},
   {path: "camp/report", component: CampReportComponent},
   {path: "camp/update", component: CampUpdateComponent},
 
-  {path:"cloths",component: ClothComponent},
-  {path:"cloth/update",component: ClothUpdateComponent},
+  {path: "cloths",component: ClothComponent},
+  {path: "cloth/update",component: ClothUpdateComponent},
 
-  {path:"foods",component: FoodComponent},
+  {path: "foods",component: FoodComponent},
   {path: "food/add", component: FoodAddComponent},
-  {path:"food/update",component: FoodUpdateComponent},
+  {path: "food/update",component: FoodUpdateComponent},
 
-  {path:"medicaments",component: MedicamentComponent},
+  {path: "medicaments",component: MedicamentComponent},
   {path: "medicament/add", component: MedicamentAddComponent},
-  {path:"medicament/update",component: MedicamentUpdateComponent},
+  {path: "medicament/update",component: MedicamentUpdateComponent},
 
-  {path :"volunteer", component : VolunteerComponent},
-  {path :"volunteer/inscription", component : VolunteerInscriptionComponent},
-  {path :"volunteer/connection", component : VolunteerConnectionComponent},
+  {path: "volunteer", component : VolunteerComponent},
+  {path: "volunteer/inscription", component : VolunteerInscriptionComponent},
+  {path: "volunteer/connection", component : VolunteerConnectionComponent},
 
   {path: "statistics", component: StatisticsComponent}
 

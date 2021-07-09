@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StatisticsServices} from "../services/statistics.services";
 import {CookieService} from "ngx-cookie-service";
 
@@ -17,7 +17,6 @@ export class StatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     const assocId = this.cookieService.get('associationId');
     if(assocId === undefined){
       console.log("Id association Manquant");

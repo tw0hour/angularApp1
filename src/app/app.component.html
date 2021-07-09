@@ -1,86 +1,94 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
   <meta charset="utf-8">
   <title>Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-<ul ngbNav #nav="ngbNav" [activeId]="2" class="dropdownMenuButton2">
-  <li ngbDropdown><a class="navbar-brand" href="#">Human-Helper</a></li>
+  <ul ngbNav #nav="ngbNav" [activeId]="2" class="dropdownMenuButton2">
+    <li ngbDropdown><a class="navbar-brand" href="#">Human-Helper</a></li>
+    <!--<ng-template [ngIf]="isAuth == false">
+    <li ngbDropdown class="nav-item">
+      <button routerLink="association/connection" type="submit" class="btn btn-primary mb-2" >Connexion</button>
+    </li>
 
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Association</a>
-    <div ngbDropdownMenu>
-      <button routerLink="association/connection" class="dropdown-item" ngbDropdownItem>Connexion</button>
-      <button routerLink="association/inscription" class="dropdown-item" ngbDropdownItem>Inscription</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="associations" class="dropdown-item" ngbDropdownItem>Liste</button>
-    </div>
-  </li>
+    <li>
+      <button routerLink="association/inscription" type="submit" class="btn btn-primary mb-2" >Inscription</button>
+    </li>
+      </ng-template>-->
 
-<ng-template [ngIf]="isAuth == true">
+    <ng-template [ngIf]="isAuth == true">
+      <li class="nav-item" ngbDropdown>
+        <a (click)="false" class="nav-link" href ngbDropdownToggle>Association</a>
+        <div ngbDropdownMenu>
+          <div class="dropdown-divider"></div>
+          <button routerLink="associations" class="dropdown-item" ngbDropdownItem>Liste</button>
+        </div>
+      </li>
 
-  <li  ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Camp</a>
-    <div ngbDropdownMenu>
-      <button routerLink="camp/report" ngbDropdownItem>Signaler un nouveau camp</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="camps" class="dropdown-item" ngbDropdownItem>Liste</button>
-    </div>
 
-  </li>
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Médicaments</a>
-    <div ngbDropdownMenu>
-      <button routerLink="medicament/add" ngbDropdownItem>Ajouter</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="medicaments" class="dropdown-item" ngbDropdownItem>Liste</button>
-    </div>
-  </li>
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Nourriture</a>
-    <div ngbDropdownMenu>
-      <button routerLink="food/add" ngbDropdownItem>Ajouter</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="foods" class="dropdown-item" ngbDropdownItem>Liste</button>
-    </div>
-  </li>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Camp</a>
+        <div ngbDropdownMenu>
+          <button routerLink="camp/report" ngbDropdownItem>Signaler un nouveau camp</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="camps" class="dropdown-item" ngbDropdownItem>Liste</button>
+        </div>
 
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Vêtements</a>
-    <div ngbDropdownMenu>
-      <button routerLink="donation/cloth" class="dropdown-item" ngbDropdownItem>Ajouter</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="cloths" class="dropdown-item" ngbDropdownItem>Liste</button>
-    </div>
-  </li>
+      </li>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Médicaments</a>
+        <div ngbDropdownMenu>
+          <button routerLink="medicament/add" ngbDropdownItem>Ajouter</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="medicaments" class="dropdown-item" ngbDropdownItem>Liste</button>
+        </div>
+      </li>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Nourriture</a>
+        <div ngbDropdownMenu>
+          <button routerLink="food/add" ngbDropdownItem>Ajouter</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="foods" class="dropdown-item" ngbDropdownItem>Liste</button>
+        </div>
+      </li>
 
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" routerLink="statistics" class="nav-link" ngbDropdownToggle>Statistiques</a>
-  </li>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Vêtements</a>
+        <div ngbDropdownMenu>
+          <button routerLink="donation/cloth" class="dropdown-item" ngbDropdownItem>Ajouter</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="cloths" class="dropdown-item" ngbDropdownItem>Liste</button>
+        </div>
+      </li>
 
-  <li ngbDropdown class="nav-item">
-    <a href (click)="false" class="nav-link" ngbDropdownToggle>Besoins (à coder)</a>
-    <div ngbDropdownMenu>
-      <button routerLink="" class="dropdown-item" ngbDropdownItem>Par Camp</button>
-      <div class="dropdown-divider"></div>
-      <button routerLink="" class="dropdown-item" ngbDropdownItem>Pour l'association</button>
-    </div>
-  </li>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" routerLink="statistics" class="nav-link" ngbDropdownToggle>Statistiques</a>
+      </li>
 
-</ng-template>
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Besoins (à coder)</a>
+        <div ngbDropdownMenu>
+          <button routerLink="" class="dropdown-item" ngbDropdownItem>Par Camp</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="" class="dropdown-item" ngbDropdownItem>Pour l'association</button>
+        </div>
+      </li>
 
-</ul>
-  <div>
-    <button type="submit" class="btn btn-primary mb-2" (click)="logout()">Logout</button>
-  </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary mb-2 " (click)="logout()">Logout</button>
+      </div>
+    </ng-template>
+  </ul>
+
 </div>
 <br>
 <router-outlet></router-outlet>
-
 
 </body>
 </html>

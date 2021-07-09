@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AssociationServices} from "../../services/association-services.service";
 import {Association} from "../../models/associations.model";
 import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-associations-connection',
@@ -12,7 +13,7 @@ export class AssociationsConnectionComponent implements OnInit {
 
   association = new Association();
 
-  constructor(private associationService: AssociationServices, private cookieService: CookieService) { }
+  constructor(private associationService: AssociationServices, private cookieService: CookieService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -32,8 +33,12 @@ export class AssociationsConnectionComponent implements OnInit {
       const value: string = this.cookieService.get('associationId');
       console.log("Cookie connection :" + value);
     });
+    this.router.navigate([""]).then();
   }
 
+  inscription(){
+    this.router.navigate(["association/inscription"]).then();
+  }
 
 
 }
