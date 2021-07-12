@@ -12,6 +12,8 @@ export class StatisticsComponent implements OnInit {
   nbDonation: number | undefined;
   totalDonation: number | undefined;
   maxDonation: number | undefined;
+  needsName: string | undefined;
+  needsQuantity: number | undefined;
 
   constructor(private statisticsServices: StatisticsServices, private cookieService: CookieService) {
   }
@@ -22,6 +24,7 @@ export class StatisticsComponent implements OnInit {
       console.log("Id association Manquant");
       return;
     }
+
     this.statisticsServices.nbDonation(parseInt(assocId)).subscribe(res => {
       console.log(res);
       this.nbDonation = res;
@@ -35,6 +38,14 @@ export class StatisticsComponent implements OnInit {
     this.statisticsServices.maxDonation(parseInt(assocId)).subscribe(res => {
       console.log(res);
       this.maxDonation = res;
+    });
+
+    this.statisticsServices.needs(parseInt(assocId)).subscribe(res => {
+      res?.forEach((value) => {
+        this.needsName = value.name;
+        this.needsQuantity = value.quantity;
+      });
+
     });
 
   }

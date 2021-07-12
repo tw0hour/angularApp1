@@ -12,6 +12,7 @@ const httpOptions = {
 
 export class StatisticsServices {
   apiUrl: string = "http://localhost:3000/donation/";
+  apiAssociationUrl: string = "http://localhost:3000/association/";
 
   constructor(private http: HttpClient){
   }
@@ -47,5 +48,16 @@ export class StatisticsServices {
       alert("Id association manquant");
     }
     return this.http.get<number>(this.apiUrl + "/maxDonation/" + associationId, httpOptions);
+  }
+
+  /**
+   * Retourne le nom et la quantité de la table qu'il a le moins de stock
+   * @param associationId
+   */
+  needs(associationId: number): Observable<{ name: string; quantity: number }[] | null>{
+    if(associationId === undefined){
+      alert("Id association manquant");
+    }
+    return this.http.get<{ name: string; quantity: number }[] | null>(this.apiAssociationUrl + "needs/" + associationId, httpOptions);
   }
 }
