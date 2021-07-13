@@ -79,6 +79,15 @@
         </div>
       </li>
 
+      <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>Livraison</a>
+        <div ngbDropdownMenu>
+          <button routerLink="delivery" class="dropdown-item" ngbDropdownItem>toutes les livraisons</button>
+          <div class="dropdown-divider"></div>
+          <button routerLink="delivery/delivered" class="dropdown-item" ngbDropdownItem>Livré</button>
+          <button routerLink="delivery/delivery" class="dropdown-item" ngbDropdownItem>En cours de livraison</button>
+        </div>
+      </li>
 
       <div>
         <button type="submit" class="btn btn-primary mb-2 " (click)="logout()">Logout</button>

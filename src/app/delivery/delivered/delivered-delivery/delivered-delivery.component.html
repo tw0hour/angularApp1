@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>Status</th> <th></th></tr>
+        </thead>
+        <tbody *ngFor="let delivery of deliveryDelivered">
+        <tr >
+          <td>{{delivery.id}}</td>
+          <td>{{delivery.status}}</td>
+          <td><button type="submit" class="btn btn-primary mb-2 " >Contenue de la livraison</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

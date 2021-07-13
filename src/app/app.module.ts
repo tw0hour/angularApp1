@@ -24,6 +24,9 @@ import { FoodUpdateComponent } from './food-update/food-update.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CommonModule } from "@angular/common";
 import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
+import { DeliveryComponent } from './delivery/delivery/delivery.component';
+import { DeliversDeliveryComponent } from './delivery/delivers/delivers-delivery/delivers-delivery.component';
+import { DeliveredDeliveryComponent } from './delivery/delivered/delivered-delivery/delivered-delivery.component';
 
 
 @NgModule({
@@ -47,7 +50,10 @@ import { ClothUpdateComponent } from './cloth-update/cloth-update.component';
     MedicamentUpdateComponent,
     FoodUpdateComponent,
     StatisticsComponent,
-    ClothUpdateComponent
+    ClothUpdateComponent,
+    DeliveryComponent,
+    DeliversDeliveryComponent,
+    DeliveredDeliveryComponent
   ],
     imports: [
         CommonModule,
