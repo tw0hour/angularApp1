@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Informations about the application Human-Helper :
+
+This application call the API Human-Helper_PA. Navigate to `https://localhost:3000:`.
+
+  * Stock management 
+    -
+      - Add
+      - addition
+      - modification
+      - deletions
+      - update
+    
+  * Receive donations 
+    -
+      - Max donation
+      - Number of donations
+      - Top donation
+  * Delivery 
+    -
+      - Know the status of a delivery (in progress / delivered)
+  
+  * Needs 
+    -
+      - Compartment with the least stock
