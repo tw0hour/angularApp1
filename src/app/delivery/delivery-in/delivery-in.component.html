@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <button type="submit" class="btn btn-primary mb-2 " (click)="goBack()">toutes les livraisons</button>
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>c koi</th> <th></th> </tr>
+        </thead>
+        <tbody>
+        nourriture
+        <tr *ngFor="let food of foodInDelivery">
+          <td>{{food.id}}</td>
+          <td>{{food.name}}</td>
+          <td>{{food.expirationDate}}</td>
+        </tr>
+        vêtements
+        <tr *ngFor="let cloth of clothInDelivery">
+          <td>{{cloth.id}}</td>
+          <td>{{cloth.name}}</td>
+          <td>{{cloth.size}}</td>
+        </tr>
+        médicament
+        <tr *ngFor="let medicament of medicamentInDelivery">
+          <td>{{medicament.id}}</td>
+          <td>{{medicament.name}}</td>
+          <td>{{medicament.expirationDate}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

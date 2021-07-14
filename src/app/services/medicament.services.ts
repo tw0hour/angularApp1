@@ -72,4 +72,11 @@ export class MedicamentServices {
     return this.http.delete<Medicament>(this.apiUrl + idMedoc, httpOptions);
   }
 
+  getMedicamentByDelivery(delivery_id:number){
+    if (delivery_id){
+      console.log('id manquant');
+    }
+    return this.http.get<Medicament[]>(this.apiUrl + "delivery/" + delivery_id, httpOptions);
+  }
+
 }

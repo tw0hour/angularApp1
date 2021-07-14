@@ -63,4 +63,11 @@ export class ClothServices {
     return this.http.delete<Cloth>(this.apiUrl + idCloth, httpOptions);
   }
 
+  getClothByDelivery(delivery_id:number){
+    if (delivery_id){
+      console.log('id manquant');
+    }
+    return this.http.get<Cloth[]>(this.apiUrl + "delivery/" + delivery_id, httpOptions);
+  }
+
 }

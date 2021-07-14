@@ -21,6 +21,7 @@ import {ClothUpdateComponent} from "./cloth-update/cloth-update.component";
 import {DeliveryComponent} from "./delivery/delivery/delivery.component";
 import {DeliveredDeliveryComponent} from "./delivery/delivered/delivered-delivery/delivered-delivery.component";
 import {DeliversDeliveryComponent} from "./delivery/delivers/delivers-delivery/delivers-delivery.component";
+import {DeliveryInComponent} from "./delivery/delivery-in/delivery-in.component";
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
 
   {path: "delivery", component: DeliveryComponent},
   {path: "delivery/delivered", component: DeliveredDeliveryComponent},
-  {path: "delivery/delivery", component: DeliversDeliveryComponent}
+  {path: "delivery/delivery", component: DeliversDeliveryComponent},
+  {path: "deliveryIn", component: DeliveryInComponent}
 
 
 ];

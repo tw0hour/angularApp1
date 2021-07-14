@@ -9,7 +9,7 @@
         <tr >
           <td>{{delivery.id}}</td>
           <td>{{delivery.status}}</td>
-          <td><button type="submit" class="btn btn-primary mb-2 " >Contenue de la livraison</button></td>
+          <td><button type="submit" class="btn btn-primary mb-2 " (click)="goToDeliveryIn(delivery.id)">Contenue de la livraison</button></td>
         </tr>
         </tbody>
       </table>

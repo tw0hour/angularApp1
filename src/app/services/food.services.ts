@@ -72,5 +72,11 @@ export class FoodServices {
     return this.http.delete(this.apiUrl + idFood, httpOptions);
   }
 
+  getFoodByDelivery(delivery_id:number){
+    if(!delivery_id){
+      console.log("id manquant");
+    }
+    return this.http.get<Food[]>(this.apiUrl + "delivery/" + delivery_id, httpOptions);
+  }
 
 }
