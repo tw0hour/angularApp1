@@ -1,4 +1,28 @@
-<p>Nombre de donation : {{nbDonation}}</p>
-<p>Montant total des donations : {{totalDonation}}</p>
-<p>Top Donation : {{maxDonation}}</p>
-<p>Besoin : {{needsName}}      {{needsQuantity}}</p>
+<!--
+<div class="">
+  <p>Nombre de donation : {{nbDonation}}</p>
+  <p>Montant total des donations : {{totalDonation}}</p>
+  <p>Top Donation : {{maxDonation}}</p>
+  <p>Besoin : {{needsName}}      {{needsQuantity}}</p>
+</div>
+-->
+
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Nombre de donation</th><th>Montant total des donations</th> <th>Top Donation</th> <th>Besoin</th> </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <td>{{nbDonation}}</td>
+          <td>{{totalDonation}}</td>
+          <td>{{maxDonation}}</td>
+          <td>{{needsName}}  {{needsQuantity}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
