@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class FoodComponent implements OnInit {
 
   foods: Food[] | undefined;
-
+  dateNow: Date = new Date();
   constructor(private foodServices: FoodServices, private cookieService: CookieService, private router: Router) { }
 
   ngOnInit(): void {
@@ -48,4 +48,7 @@ export class FoodComponent implements OnInit {
     this.router.navigate(["food/update"]);
   }
 
+  toDate(date: string): Date{
+    return new Date(date);
+  }
 }

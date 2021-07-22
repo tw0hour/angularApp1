@@ -5,6 +5,7 @@ import {GenderClothServices} from "../services/genderCloth.services";
 import {TypeCloth} from "../models/typeCloth.model";
 import {GenderCloth} from "../models/genderCloth.model";
 import {TypeClothServices} from "../services/typeCloth.services";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-cloth-update',
@@ -17,7 +18,7 @@ export class ClothUpdateComponent implements OnInit {
   typesCloth: TypeCloth[] | undefined;
   gendersCloth: GenderCloth[] | undefined;
 
-  constructor(private clothServices: ClothServices, private typeClothServices: TypeClothServices, private genderClothServices: GenderClothServices) { }
+  constructor(private clothServices: ClothServices, private typeClothServices: TypeClothServices, private genderClothServices: GenderClothServices, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.genderClothServices.getAllGenderCloth().subscribe(genders => {
@@ -26,6 +27,9 @@ export class ClothUpdateComponent implements OnInit {
 
     this.typeClothServices.getAllTypeCloth().subscribe(types => {
       this.typesCloth = types;
+    });
+    this.clothServices.getClothById(parseInt(this.cookieService.get('clothId'))).subscribe(cloth=>{
+      this.cloth = cloth
     });
   }
   updateCloth(){

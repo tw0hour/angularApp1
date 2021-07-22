@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Association } from "../models/associations.model";
 import { Observable } from "rxjs";
-import { Router } from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 
 const httpOptions = {
@@ -17,7 +16,7 @@ export class AssociationServices {
 
   apiUrl: string = "http://localhost:3000/association/";
 
-  constructor(private http: HttpClient, private cookieService: CookieService, private router:Router){
+  constructor(private http: HttpClient, private cookieService: CookieService){
   }
 
   getAllAssociation():Observable<Association[]>{
@@ -67,7 +66,7 @@ export class AssociationServices {
       console.log("updateAssoction() Id manquant");
     }
 
-    return this.http.put<Association>(this.apiUrl + idAssoCookie, httpOptions).subscribe(data =>{
+    return this.http.put<Association>(this.apiUrl + idAssoCookie,association, httpOptions).subscribe(data =>{
       console.log(data);
     });
   }

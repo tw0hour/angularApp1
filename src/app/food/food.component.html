@@ -3,19 +3,81 @@
     <div class="card-body">
       <table class="table table-striped">
         <thead>
-        <tr> <th>Id</th><th>Nom</th> <th>Type</th> <th>Date de péremtpion</th> <th></th><th></th></tr>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Type</th>
+          <th>Date de péremtpion</th>
+          <th></th>
+          <th></th>
+        </tr>
         </thead>
         <tbody *ngFor="let food of foods">
-        <tr>
-          <td>{{food.id}}</td>
-          <td>{{food.name}}</td>
-          <td>{{food.type_food_id}}</td>
-          <td>{{food.expirationDate}}</td>
-          <td> <button type="button" (click)="goToFoodUpdateForm(food.id)">Mettre à jour</button> </td>
-          <td> <button type="button" (click)="deleteFoodById(food.id)">Supprimer</button> </td>
-        </tr>
+
+
+        <ng-template [ngIf]="food.expirationDate == undefined">
+          <tr>
+            <td>{{food.id}}</td>
+            <td>{{food.name}}</td>
+            <td>{{food.type_food_id}}</td>
+            <td>{{food.expirationDate}}</td>
+            <td>
+              <button type="button" (click)="goToFoodUpdateForm(food.id)">Mettre à jour</button>
+            </td>
+            <td>
+              <button type="button" (click)="deleteFoodById(food.id)">Supprimer</button>
+            </td>
+          </tr>
+        </ng-template>
+          <ng-template [ngIf]="food.expirationDate != undefined && toDate(food.expirationDate) <= dateNow">
+            <tr  style="color:red;">
+              <td>{{food.id}}</td>
+              <td>{{food.name}}</td>
+              <td>{{food.type_food_id}}</td>
+              <td>{{food.expirationDate}}</td>
+              <td>
+                <button type="button" (click)="goToFoodUpdateForm(food.id)">Mettre à jour</button>
+              </td>
+              <td>
+                <button type="button" (click)="deleteFoodById(food.id)">Supprimer</button>
+              </td>
+            </tr>
+          </ng-template>
+
+          <ng-template [ngIf]="food.expirationDate != undefined && toDate(food.expirationDate) > dateNow">
+            <tr>
+              <td>{{food.id}}</td>
+              <td>{{food.name}}</td>
+              <td>{{food.type_food_id}}</td>
+              <td>{{food.expirationDate}}</td>
+              <td>
+                <button type="button" (click)="goToFoodUpdateForm(food.id)">Mettre à jour</button>
+              </td>
+              <td>
+                <button type="button" (click)="deleteFoodById(food.id)">Supprimer</button>
+              </td>
+            </tr>
+          </ng-template>
+
+
+
+
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+
+<!--
+<ng-template *ngIf=" food.expirationDate != undefined;">
+  <ng-template [ngIf]=" toDate(food.expirationDate) <= dateNow">
+    <tr  style="color:red;">
+  </ng-template>
+  <ng-template [ngIf]=" toDate(food.expirationDate) > dateNow">
+    <tr>
+  </ng-template>
+</ng-template>
+<ng-template *ngIf=" food.expirationDate == undefined;">
+  <tr>
+</ng-template>-->

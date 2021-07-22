@@ -3,6 +3,7 @@ import {FoodServices} from "../services/food.services";
 import {Food} from "../models/food.model";
 import {TypeFood} from "../models/typeFood.model";
 import {TypeFoodServices} from "../services/typeFood.services";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-food-update',
@@ -15,11 +16,14 @@ export class FoodUpdateComponent implements OnInit {
   typesFood: TypeFood[] | undefined;
 
 
-  constructor(private foodServices: FoodServices, private typeFoodServices: TypeFoodServices) { }
+  constructor(private foodServices: FoodServices, private typeFoodServices: TypeFoodServices, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.typeFoodServices.getAllTypeFood().subscribe(types => {
       this.typesFood = types;
+    });
+    this.foodServices.getFoodById(parseInt(this.cookieService.get('foodId'))).subscribe(food=>{
+      this.food=food;
     });
   }
 

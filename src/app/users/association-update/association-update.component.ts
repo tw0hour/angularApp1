@@ -10,11 +10,20 @@ import {CookieService} from "ngx-cookie-service";
 })
 export class AssociationUpdateComponent implements OnInit {
 
-  association = new Association();
+  association:Association = new Association();
 
   constructor(private associationServices: AssociationServices, private cookieService: CookieService) { }
 
   ngOnInit(): void {
+
+    this.associationServices.getAssociationById(parseInt(this.cookieService.get('associationId'))).subscribe(obj => {
+      console.log(obj);
+      this.association.id = obj.id;
+      this.association.name = obj.name;
+      this.association.password = obj.password;
+      this.association.mail = obj.mail;
+      this.association.money = obj.money;
+    });
   }
 
   updateAssociation(){
