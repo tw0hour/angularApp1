@@ -61,19 +61,21 @@ export class AssociationServices {
   }
 
   updateAssociation(association : Association){
-    const idAssociationCookie = parseInt(this.cookieService.get('associationId'));
+    const idAssoCookie = parseInt(this.cookieService.get('associationId'));
 
-    if(!idAssociationCookie){
+    if(!idAssoCookie){
       console.log("updateAssoction() Id manquant");
     }
 
-    return this.http.put<Association>(this.apiUrl + idAssociationCookie, association, httpOptions).subscribe();
+    return this.http.put<Association>(this.apiUrl + idAssoCookie, httpOptions).subscribe(data =>{
+      console.log(data);
+    });
   }
 
   updateAssociationPassword(idAssoc: number, password: string){
     if(!idAssoc){
       console.log("update password Id manquant");
     }
-    return this.http.put<Association>(this.apiUrl + "password/" + idAssoc, password, httpOptions).subscribe();
+    return this.http.put(this.apiUrl + "password/" + idAssoc, password, httpOptions).subscribe();
   }
 }

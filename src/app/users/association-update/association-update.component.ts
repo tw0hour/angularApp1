@@ -37,7 +37,6 @@ export class AssociationUpdateComponent implements OnInit {
       this.associationServices.updateAssociation(this.association);
     }
 
-
   }
 
 }

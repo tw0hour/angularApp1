@@ -93,7 +93,7 @@ export class ClothServices {
 
   deleteClothById(idCloth: number): Observable<Cloth>{
     if(!idCloth){
-      alert("L'id n'est pas renseign");
+      alert("L'id n'est pas renseigné");
     }
     return this.http.delete<Cloth>(this.apiUrl + idCloth, httpOptions);
   }
