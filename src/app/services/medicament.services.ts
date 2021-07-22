@@ -25,10 +25,6 @@ export class MedicamentServices {
     }
     medoc.association_id = parseInt(this.cookieService.get('associationId'));
 
-    console.log("Nom médicament:" + medoc.name);
-    console.log("Id Cookie ajout médicament:" + medoc.association_id);
-    console.log("Date ajout médicament:" + medoc.expirationDate);
-
     if(!medoc.association_id){
       alert("Id volontaire manquant, problème avec le cookie");
     }
@@ -47,18 +43,8 @@ export class MedicamentServices {
   }
 
   updateMedicament(medoc: Medicament){
-    console.log("-------medicaments.services.ts-------");
-    console.log("-------updateMedicament()-------");
-    console.log("Cookie Medoc id : " + this.cookieService.get('medocId'));
 
     const idCookieMedoc = parseInt(this.cookieService.get('medocId'));
-
-    console.log("Medoc id : " + medoc.id);
-    console.log("Camp name : " + medoc.name);
-    console.log("Camp expirationDate : " + medoc.expirationDate);
-    console.log("Camp volunteer_id : " + medoc.volunteer_id);
-    console.log("Camp delivery_id : " + medoc.delivery_id);
-    console.log("-------------------------------------");
 
     this.http.put<Medicament>(this.apiUrl + idCookieMedoc, medoc, httpOptions).subscribe(data => {
       console.log(data);

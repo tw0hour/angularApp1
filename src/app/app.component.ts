@@ -14,9 +14,12 @@ export class AppComponent {
   constructor(private cookieService: CookieService,private router: Router) {}
 
   ngOnInit(): void{
-    if (!this.isAuth){
+    if (!this.isAuth)
+    {
       this.router.navigate(["association/connection"]).then();
-    }else {
+    }
+    else
+    {
       this.router.navigate([""]).then();
     }
 

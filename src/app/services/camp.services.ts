@@ -42,18 +42,8 @@ export class CampServices {
   }
 
   updateCamp(camp: Camp){
-    console.log("-------camp.services.ts-------");
-    console.log("-------updateCamp()-------");
-    console.log("Cookie Camp id : " + this.cookieService.get('campId'));
 
     const idCookieCamp = parseInt(this.cookieService.get('campId'));
-
-    console.log("Camp id : " + camp.id);
-    console.log("Camp nbPeople : " + camp.nbPeople);
-    console.log("Camp city : " + camp.city);
-    console.log("Camp address : " + camp.address);
-    console.log("Camp postalCode : " + camp.postalCode);
-    console.log("-------------------------------------");
 
     this.http.put<Camp>(this.apiUrl + idCookieCamp, camp, httpOptions).subscribe( data =>{
       console.log(data);

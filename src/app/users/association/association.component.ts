@@ -13,7 +13,6 @@ export class AssociationComponent implements OnInit {
   associations : Association[] | undefined;
 
   constructor(private associationService : AssociationServices, private cookieService: CookieService,private router: Router) {
-    //private cookieService: CookieService,private router: Router
     if (! this.cookieService.check('associationId')){
         this.router.navigate(["association/connection"]).then();
     }

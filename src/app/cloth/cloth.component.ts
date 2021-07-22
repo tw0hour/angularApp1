@@ -39,22 +39,11 @@ export class ClothComponent implements OnInit {
    */
   goToClothUpdateForm(idCloth: number | undefined){
     if(!idCloth) {
-      console.log("--- cloth.component ---");
-      console.log("--- goToClothUpdateForm() ---");
       console.log("Id Manquant");
       return;
     }
-    console.log("--- cloth.component ---");
-    console.log("--- goToClothUpdateForm() ---");
-    console.log("IdCloth : " + idCloth);
-    console.log("-----------------------------");
 
     this.cookieService.set('clothId', idCloth.toString(), {expires: 1, path: "/"});
-
-    //debug
-    const value: string = this.cookieService.get('clothId');
-    console.log("Cookie clothId :" + value);
-    //debug
 
     this.router.navigate(["cloth/update"]);
   }

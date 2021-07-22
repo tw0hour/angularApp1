@@ -50,7 +50,6 @@ export class AssociationServices {
       return null;
     }
     if(this.http.post(this.apiUrl + "/connection", httpOptions)){
-      //alert("Bonjour " + name + " !");
       setInterval(()=>{window.location.reload();},500);//window.location.reload();
       return true;
     }

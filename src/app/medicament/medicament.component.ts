@@ -24,22 +24,10 @@ export class MedicamentComponent implements OnInit {
 
   goToMedicamentUpdateForm(idMedoc: number | undefined){
     if(!idMedoc) {
-      console.log("--- medicament.component ---");
-      console.log("--- goToMedicamentUpdateForm() ---");
-      console.log("Id Manquant");
       return;
     }
-    console.log("--- medicament.component ---");
-    console.log("--- goToMedicamentUpdateForm() ---");
-    console.log("IdMedoc : " + idMedoc);
-    console.log("-----------------------------");
 
     this.cookieService.set('medocId', idMedoc.toString(), {expires: 1, path: "/"});
-
-    //debug
-    const value: string = this.cookieService.get('medocId');
-    console.log("Cookie medocId :" + value);
-    //debug
 
     this.router.navigate(["medicament/update"]);
   }

@@ -40,22 +40,10 @@ export class FoodComponent implements OnInit {
    */
   goToFoodUpdateForm(idFood: number | undefined){
     if(!idFood) {
-      console.log("--- food.component ---");
-      console.log("--- goToFoodUpdateForm() ---");
-      console.log("Id Manquant");
       return;
     }
-    console.log("--- food.component ---");
-    console.log("--- goToFoodUpdateForm() ---");
-    console.log("IdFood : " + idFood);
-    console.log("-----------------------------");
 
     this.cookieService.set('foodId', idFood.toString(), {expires: 1, path: "/"});
-
-    //debug
-    const value: string = this.cookieService.get('foodId');
-    console.log("Cookie foodId :" + value);
-    //debug
 
     this.router.navigate(["food/update"]);
   }
