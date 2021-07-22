@@ -22,10 +22,20 @@ export class ClothServices {
 
 
   addCloth(cloth: Cloth): Observable<Cloth>{
-    if(!cloth.name || !cloth.size || !cloth.gender){
+    if(!cloth.name || !cloth.size){
       alert("Tous les champs doivent être remplis !");
     }
-    return this.http.post<Cloth>(this.apiUrl, cloth, httpOptions);
+
+    if(!cloth.gender_cloth_id){
+      alert("gender_cloth_id manquant");
+    }
+
+    cloth.association_id = parseInt(this.cookieService.get('associationId'));
+
+    if(!cloth.association_id){
+      alert("Id association manquant, problème avec le cookie");
+    }
+    return this.http.post<Cloth>(this.apiUrl + "association/", cloth, httpOptions);
   }
 
   getClothById(idCloth: number): Observable<Cloth>{
@@ -48,12 +58,49 @@ export class ClothServices {
 
     console.log("Cloth id : " + cloth.id);
     console.log("Cloth name : " + cloth.name);
-    console.log("Cloth gender : " + cloth.gender);
+    console.log("Cloth gender_cloth_id : " + cloth.gender_cloth_id);
+    console.log("Cloth type_cloth_id : " + cloth.type_cloth_id);
     console.log("-------------------------------------");
 
     this.http.put<Food>(this.apiUrl + idCookieCloth, cloth, httpOptions).subscribe( data =>{
       console.log(data);
     });
+  }
+
+  updateGenderCloth(idGender: number){
+    const idCloth = parseInt(this.cookieService.get('clothId'));
+    if(!idCloth){
+      console.log("idCloth manquant");
+      return;
+    }
+    if(!idGender){
+      console.log("idGender manquant");
+      return;
+    }
+
+    console.log("idGender :" + idGender);
+
+    this.http.put(this.apiUrl + "cloth/" + idCloth + "/GenderCloth/" + idGender, httpOptions).subscribe( data =>{
+      console.log(data);
+    });
+
+  }
+
+  updateTypeCloth(idType: number){
+    const idCloth = parseInt(this.cookieService.get('clothId'));
+    if(!idCloth){
+      console.log("idCloth manquant");
+      return;
+    }
+    if(!idType){
+      console.log("idGender manquant");
+      return;
+    }
+
+    this.http.put(this.apiUrl + "cloth/" + idCloth + "/TypeCloth/" + idType, httpOptions).subscribe( data =>{
+      console.log(data);
+    });
+
   }
 
   deleteClothById(idCloth: number): Observable<Cloth>{

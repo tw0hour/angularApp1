@@ -1,1 +1,51 @@
-<p>cloth-add works!</p>
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p> Ajout de Vêtemetns</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="name">Name : </label>
+        <input type="text" name="name" id="name" class="form-control" [(ngModel)]="cloth.name">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="size">Taille: </label>
+        <input type="number" id="size" name="expirationDate" class="form-control" [(ngModel)]="cloth.size">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Genre : </label>
+        <select ng-options="genderCloth as type.label for genderCloth in gendersCloth track by genderCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.gender_cloth_id">
+          <option value="" readonly="" selected>-- Choisir --</option>
+          <option async *ngFor="let genderCloth of gendersCloth" ngDefaultControl [value]="genderCloth.id">
+            {{genderCloth.type}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Type de Vêtements : </label>
+        <select ng-options="typeCloth as type.label for typeCloth in typesCloth track by typeCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.type_cloth_id">
+          <option value="" readonly="" selected>-- Choisir --</option>
+          <option async *ngFor="let typeCloth of typesCloth" ngDefaultControl [value]="typeCloth.id">
+            {{typeCloth.type}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="addCloth()" class="btn btn-primary mb-2 col-md-2">Ajouter</button>
+    </div>
+
+  </div>
+</form>

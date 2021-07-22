@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class TypeClothServices {
+export class GenderClothServices {
   apiUrl: string = "http://localhost:3000/genderCloth/";
 
   constructor(private http: HttpClient) {

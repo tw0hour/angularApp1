@@ -18,6 +18,18 @@
       </div>
     </div>
 
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Type de nouritures: </label>
+        <select ng-options="typeFood as type.label for typeFood in typesFood track by typeFood.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="food.type_food_id">
+          <option value="" readonly="" selected>-- Choisir --</option>
+          <option async *ngFor="let typeFood of typesFood" ngDefaultControl [value]="typeFood.id">
+            {{typeFood.type}}
+          </option>
+        </select>
+      </div>
+    </div>
+
     <br>
     <div class="row justify-content-md-center">
       <label></label>

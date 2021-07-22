@@ -6,22 +6,39 @@
 
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <label for="nbPeople">Nom :</label>
-        <input type="text" name="nbPeople" id="nbPeople" class="form-control" [(ngModel)]="cloth.name">
+        <label>Description :</label>
+        <input type="text" class="form-control" [(ngModel)]="cloth.name">
       </div>
     </div>
 
     <div class="row justify-content-md-center">
       <div class="col-md-6">
         <label>Taille : </label>
-        <input type="text" id="size" name="city" class="form-control" [(ngModel)]="cloth.size">
+        <input type="number" id="size" name="size" class="form-control" [(ngModel)]="cloth.size">
       </div>
     </div>
 
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <label>Sexe : </label>
-        <input type="date" id="gender" name="city" class="form-control" [(ngModel)]="cloth.gender">
+        <label>Genre : </label>
+        <select ng-options="genderCloth as type.label for genderCloth in gendersCloth track by genderCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.gender_cloth_id">
+          <option value="" readonly="" selected>-- Choisir --</option>
+          <option async *ngFor="let genderCloth of gendersCloth" ngDefaultControl [value]="genderCloth.id">
+            {{genderCloth.type}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label>Type de Vêtements : </label>
+        <select ng-options="typeCloth as type.label for typeCloth in typesCloth track by typeCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.type_cloth_id">
+          <option value="" readonly="" selected>-- Choisir --</option>
+          <option async *ngFor="let typeCloth of typesCloth" ngDefaultControl [value]="typeCloth.id">
+            {{typeCloth.type}}
+          </option>
+        </select>
       </div>
     </div>
 

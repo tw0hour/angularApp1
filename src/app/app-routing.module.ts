@@ -22,6 +22,7 @@ import {DeliveryComponent} from "./delivery/delivery/delivery.component";
 import {DeliveredDeliveryComponent} from "./delivery/delivered/delivered-delivery/delivered-delivery.component";
 import {DeliversDeliveryComponent} from "./delivery/delivers/delivers-delivery/delivers-delivery.component";
 import {DeliveryInComponent} from "./delivery/delivery-in/delivery-in.component";
+import {ClothAddComponent} from "./cloth-add/cloth-add.component";
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: "camp/update", component: CampUpdateComponent},
 
   {path: "cloths",component: ClothComponent},
+  {path: "cloth/add",component: ClothAddComponent},
   {path: "cloth/update",component: ClothUpdateComponent},
 
   {path: "foods",component: FoodComponent},

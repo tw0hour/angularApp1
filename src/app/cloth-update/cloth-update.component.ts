@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Cloth} from "../models/cloth.model";
 import {ClothServices} from "../services/cloth.services";
+import {GenderClothServices} from "../services/genderCloth.services";
+import {TypeCloth} from "../models/typeCloth.model";
+import {GenderCloth} from "../models/genderCloth.model";
+import {TypeClothServices} from "../services/typeCloth.services";
 
 @Component({
   selector: 'app-cloth-update',
@@ -10,13 +14,41 @@ import {ClothServices} from "../services/cloth.services";
 export class ClothUpdateComponent implements OnInit {
 
   cloth = new Cloth();
+  typesCloth: TypeCloth[] | undefined;
+  gendersCloth: GenderCloth[] | undefined;
 
-  constructor(private clothServices: ClothServices) { }
+  constructor(private clothServices: ClothServices, private typeClothServices: TypeClothServices, private genderClothServices: GenderClothServices) { }
 
   ngOnInit(): void {
+    this.genderClothServices.getAllGenderCloth().subscribe(genders => {
+      this.gendersCloth = genders;
+    });
+
+    this.typeClothServices.getAllTypeCloth().subscribe(types => {
+      this.typesCloth = types;
+    });
   }
   updateCloth(){
-    this.clothServices.updateCloth(this.cloth);
+
+    if(!this.cloth.gender_cloth_id && !this.cloth.type_cloth_id) {
+      this.clothServices.updateCloth(this.cloth);
+    }
+
+    else if(this.cloth.gender_cloth_id && !this.cloth.type_cloth_id){
+      this.clothServices.updateCloth(this.cloth);
+      this.clothServices.updateGenderCloth(this.cloth.gender_cloth_id);
+    }
+
+    else if(!this.cloth.gender_cloth_id && this.cloth.type_cloth_id){
+      this.clothServices.updateCloth(this.cloth);
+      this.clothServices.updateTypeCloth(this.cloth.type_cloth_id);
+    }
+
+    else if(this.cloth.gender_cloth_id && this.cloth.type_cloth_id){
+      this.clothServices.updateCloth(this.cloth);
+      this.clothServices.updateGenderCloth(this.cloth.gender_cloth_id);
+      this.clothServices.updateTypeCloth(this.cloth.type_cloth_id);
+    }
   }
 
 }
