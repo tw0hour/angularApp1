@@ -34,7 +34,7 @@ export class AssociationServices {
     if(!assocName){
       console.log("Nom manquant");
     }
-    return  this.http.get<Association>(this.apiUrl + "name/" + assocName, httpOptions);
+    return this.http.get<Association>(this.apiUrl + "name/" + assocName, httpOptions);
   }
 
   inscription(assoc: Association): Observable<Association>{
@@ -57,5 +57,13 @@ export class AssociationServices {
       alert("Informations de connexion erronnées");
       return false;
     }
+  }
+
+  updateAssociation(association : Association){
+    if(!association.id){
+      console.log("Id manquant");
+    }
+
+    return this.http.post<Association>(this.apiUrl + association.id, association, httpOptions);
   }
 }

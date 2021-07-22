@@ -29,6 +29,7 @@ import { DeliversDeliveryComponent } from './delivery/delivers/delivers-delivery
 import { DeliveredDeliveryComponent } from './delivery/delivered/delivered-delivery/delivered-delivery.component';
 import { DeliveryInComponent } from './delivery/delivery-in/delivery-in.component';
 import { ClothAddComponent } from './cloth-add/cloth-add.component';
+import { AssociationUpdateComponent } from './users/association-update/association-update.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ClothAddComponent } from './cloth-add/cloth-add.component';
     DeliversDeliveryComponent,
     DeliveredDeliveryComponent,
     DeliveryInComponent,
-    ClothAddComponent
+    ClothAddComponent,
+    AssociationUpdateComponent
   ],
     imports: [
         CommonModule,

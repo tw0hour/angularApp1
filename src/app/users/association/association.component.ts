@@ -10,9 +10,10 @@ import {CookieService} from "ngx-cookie-service";
 })
 export class AssociationComponent implements OnInit {
 
-  associations : Association[] | undefined;
+  association = new Association() ;
 
   constructor(private associationService : AssociationServices, private cookieService: CookieService,private router: Router) {
+    //private cookieService: CookieService,private router: Router
     if (! this.cookieService.check('associationId')){
         this.router.navigate(["association/connection"]).then();
     }
@@ -20,10 +21,22 @@ export class AssociationComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.associationService.listAssociation().subscribe(obj => {
-      console.log(obj);
-      this.associations = obj;
+    const assocId = this.cookieService.get('associationId');
+
+    this.associationService.getAssociationById(parseInt(assocId)).subscribe(obj => {
+        this.association = obj;
     });
+
   }
+
+  goToAssociationUpdateForm(idAssociation: number | undefined){
+    if(!idAssociation) {
+      return;
+    }
+    //this.cookieService.set('foodId', idFood.toString(), {expires: 1, path: "/"});
+
+    this.router.navigate(["association/update"]);
+  }
+
 
 }

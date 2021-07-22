@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CookieService } from "ngx-cookie-service";
 import { Router } from "@angular/router";
+import {AssociationServices} from "./services/association-services.service";
+import {Association} from "./models/associations.model";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,9 @@ export class AppComponent {
   title = 'angularApp1';
   public isAuth: boolean = this.cookieService.check('associationId');
 
-  constructor(private cookieService: CookieService,private router: Router) {}
+  association = new Association()
+
+  constructor(private cookieService: CookieService, private router: Router, private associationServices: AssociationServices) {}
 
   ngOnInit(): void{
     if (!this.isAuth)
@@ -21,6 +25,11 @@ export class AppComponent {
     else
     {
       this.router.navigate([""]).then();
+
+      const assocId = parseInt(this.cookieService.get('associationId'));
+      this.associationServices.getAssociationById(assocId).subscribe(assoc => {
+        this.association = assoc;
+      });
     }
 
   }

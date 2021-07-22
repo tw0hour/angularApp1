@@ -23,12 +23,15 @@ import {DeliveredDeliveryComponent} from "./delivery/delivered/delivered-deliver
 import {DeliversDeliveryComponent} from "./delivery/delivers/delivers-delivery/delivers-delivery.component";
 import {DeliveryInComponent} from "./delivery/delivery-in/delivery-in.component";
 import {ClothAddComponent} from "./cloth-add/cloth-add.component";
+import {Association} from "./models/associations.model";
+import {AssociationUpdateComponent} from "./users/association-update/association-update.component";
 
 
 const routes: Routes = [
   {path: "associations",component:AssociationComponent},
   {path: "association/inscription", component: AssociationsInscriptionComponent},
   {path: "association/connection", component: AssociationsConnectionComponent},
+  {path: "association/update", component: AssociationUpdateComponent},
 
   {path: "camps",component: CampComponent},
   {path: "camp/report", component: CampReportComponent},

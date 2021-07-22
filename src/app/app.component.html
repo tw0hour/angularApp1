@@ -11,22 +11,13 @@
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
   <ul ngbNav #nav="ngbNav" [activeId]="2" class="dropdownMenuButton2">
     <li ngbDropdown><a class="navbar-brand" href="#">Human-Helper</a></li>
-    <!--<ng-template [ngIf]="isAuth == false">
-    <li ngbDropdown class="nav-item">
-      <button routerLink="association/connection" type="submit" class="btn btn-primary mb-2" >Connexion</button>
-    </li>
-
-    <li>
-      <button routerLink="association/inscription" type="submit" class="btn btn-primary mb-2" >Inscription</button>
-    </li>
-      </ng-template>-->
 
     <ng-template [ngIf]="isAuth == true">
       <li class="nav-item" ngbDropdown>
-        <a (click)="false" class="nav-link" href ngbDropdownToggle>Association</a>
+        <a (click)="false" class="nav-link" href ngbDropdownToggle>{{association.name}}</a>
         <div ngbDropdownMenu>
           <div class="dropdown-divider"></div>
-          <button routerLink="associations" class="dropdown-item" ngbDropdownItem>Liste</button>
+          <button routerLink="associations" class="dropdown-item" ngbDropdownItem>Mon Compte</button>
         </div>
       </li>
 
