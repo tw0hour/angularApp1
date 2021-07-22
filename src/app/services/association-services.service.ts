@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Association } from "../models/associations.model";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,10 +17,10 @@ export class AssociationServices {
 
   apiUrl: string = "http://localhost:3000/association/";
 
-  constructor(private http: HttpClient,private router:Router){
+  constructor(private http: HttpClient, private cookieService: CookieService, private router:Router){
   }
 
-  listAssociation():Observable<Association[]>{
+  getAllAssociation():Observable<Association[]>{
     return this.http.get<Association[]>(this.apiUrl);
   }
 
@@ -60,9 +61,19 @@ export class AssociationServices {
   }
 
   updateAssociation(association : Association){
-    if(!association.id){
-      console.log("Id manquant");
+    const idAssociationCookie = parseInt(this.cookieService.get('associationId'));
+
+    if(!idAssociationCookie){
+      console.log("updateAssoction() Id manquant");
     }
-    return this.http.post<Association>(this.apiUrl + association.id, association, httpOptions);
+
+    return this.http.put<Association>(this.apiUrl + idAssociationCookie, association, httpOptions).subscribe();
+  }
+
+  updateAssociationPassword(idAssoc: number, password: string){
+    if(!idAssoc){
+      console.log("update password Id manquant");
+    }
+    return this.http.put<Association>(this.apiUrl + "password/" + idAssoc, password, httpOptions).subscribe();
   }
 }

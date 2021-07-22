@@ -13,7 +13,7 @@ export class AssociationComponent implements OnInit {
   association = new Association() ;
 
   constructor(private associationService : AssociationServices, private cookieService: CookieService,private router: Router) {
-    //private cookieService: CookieService,private router: Router
+
     if (! this.cookieService.check('associationId')){
         this.router.navigate(["association/connection"]).then();
     }
@@ -29,11 +29,13 @@ export class AssociationComponent implements OnInit {
 
   }
 
-  goToAssociationUpdateForm(idAssociation: number | undefined){
-    if(!idAssociation) {
+  goToAssociationUpdateForm(idAssoc: number | undefined){
+    if(idAssoc === undefined) {
+      alert("Vous n'avez pas accès à cette page merce vous Connecter");
       return;
     }
-    //this.cookieService.set('foodId', idFood.toString(), {expires: 1, path: "/"});
+
+    this.cookieService.set('associationId', idAssoc.toString(), {expires: 1, path: "/"});
 
     this.router.navigate(["association/update"]);
   }

@@ -1,1 +1,38 @@
-<p>association-update works!</p>
+<form class="container">
+  <div class="row">
+    <div class="form-control text-center col-md-12">
+      <p>Mise à jour de mon profil</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name" class="form-control" [(ngModel)]="association.name">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="city">Mail : </label>
+        <input type="email" id="city" name="city" class="form-control" [(ngModel)]="association.mail">
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <label for="city">Mot de passe : </label>
+        <input type="password" id="password" name="city" class="form-control" [(ngModel)]="association.password">
+      </div>
+    </div>
+
+    <br>
+    <div class="row justify-content-md-center">
+      <label></label>
+      <button type="button" (click)="updateAssociation()" class="btn btn-primary mb-2 col-md-2">Mettre à jour</button>
+    </div>
+
+  </div>
+</form>
+
+
+

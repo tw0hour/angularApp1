@@ -5,14 +5,13 @@
         <thead>
         <tr> <th>Id</th><th>Nom</th> <th>Cagnotte</th> <th>mail</th> <th></th> </tr>
         </thead>
-        <tr *ngIf="association.id !== undefined && association.name !== undefined &&
-                    association.money !== undefined && association.mail !== undefined ">
+        <tr>
           <td>{{association.id}}</td>
           <td>{{association.name}}</td>
           <td>{{association.money}}</td>
           <td>{{association.mail}}</td>
 
-          <td> <button type="button" (click)="goToAssociationUpdateForm(association.id)">Mettre à jour</button> </td>
+          <td> <button type="button" (click)="goToAssociationUpdateForm(association.id)">Modifier</button> </td>
 
         </tr>
       </table>
