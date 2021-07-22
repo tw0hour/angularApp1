@@ -29,11 +29,6 @@ export class CampReportComponent implements OnInit {
   }
 
   reportCamp(){
-    console.log("camp report components :" + this.camp.nbPeople);
-    console.log("camp report components :" + this.camp.city);
-    console.log("camp report components :" + this.camp.address);
-    console.log("camp report components :" + this.camp.postalCode);
-
     this.campService.reportCamp(this.camp).subscribe(signalement => {
       console.log(signalement);
     });

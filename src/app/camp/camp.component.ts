@@ -19,14 +19,12 @@ export class CampComponent implements OnInit {
 
   ngOnInit(): void {
     this.campService.getAllCamp().subscribe(obj => {
-      console.log(obj);
       this.camps = obj;
     });
   }
 
   deleteCampById(idCamp: number | undefined){
     if(!idCamp) {
-      console.log("Id Manquant");
       return;
     }
 
@@ -41,23 +39,9 @@ export class CampComponent implements OnInit {
    */
   goToCampUpdateForm(idCamp: number | undefined){
     if(!idCamp) {
-      console.log("--- camp.component ---");
-      console.log("--- goToCampUpdateFrom() ---");
-      console.log("Id Manquant");
       return;
     }
-    console.log("--- camp.component ---");
-    console.log("--- goToCampUpdateFrom() ---");
-    console.log("IdCamp : " + idCamp);
-    console.log("-----------------------------");
-
     this.cookieService.set('campId', idCamp.toString(), {expires: 1, path: "/"});
-
-    //debug
-    const value: string = this.cookieService.get('campId');
-    console.log("Cookie campId :" + value);
-    //debug
-
     this.router.navigate(["camp/update"]);
   }
 

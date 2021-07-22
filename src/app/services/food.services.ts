@@ -19,22 +19,16 @@ export class FoodServices {
   }
 
   addFood(food: Food){
-    console.log("---food.services / addFood()---");
-    console.log("food.type_food_id : " + food.type_food_id);
-    if(!food.name || !food.expirationDate || !food.association_id  || !food.type_food_id){
+    if(!food.name || !food.expirationDate || !food.type_food_id){
       alert("Veuillez rempir tous les champs");
     }
 
     food.association_id = parseInt(this.cookieService.get('associationId'));
 
-    console.log("Nom Food:" + food.name);
-    console.log("associationId Cookie :" + food.association_id);
-    console.log("Date addFood : " + food.expirationDate);
-
     if(!food.association_id){
-      alert("Id volontaire manquant, problème avec le cookie");
+      alert("Id association manquant, problème avec le cookie");
     }
-    return this.http.post<Food>(this.apiUrl, food, httpOptions);
+    return this.http.post<Food>(this.apiUrl + "association/", food, httpOptions);
   }
 
   getAllFood(): Observable<Food[]>{
@@ -50,15 +44,7 @@ export class FoodServices {
 
   updateFood(food: Food){
 
-    console.log("-------food.services.ts-------");
-    console.log("-------updateFood()-------");
-    console.log("Cookie Food id : " + this.cookieService.get('foodId'));
     const idCookieFood = parseInt(this.cookieService.get('foodId'));
-
-    console.log("Food id : " + food.id);
-    console.log("Food nbPeople : " + food.name);
-    console.log("Food city : " + food.expirationDate);
-    console.log("-------------------------------------");
 
     this.http.put<Food>(this.apiUrl + idCookieFood, food, httpOptions).subscribe( data =>{
       console.log(data);

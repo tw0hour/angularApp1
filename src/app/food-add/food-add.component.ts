@@ -12,7 +12,6 @@ import {TypeFood} from "../models/typeFood.model";
 export class FoodAddComponent implements OnInit {
 
   food = new Food();
-  foodType = new TypeFood();
   typesFood: TypeFood[] | undefined;
 
   constructor(private foodServices: FoodServices, private typeFoodServices: TypeFoodServices) { }
@@ -24,10 +23,6 @@ export class FoodAddComponent implements OnInit {
   }
 
   addFood(){
-    console.log("---food-add.component / addFood()---");
-    console.log("Id séléctionné : " + this.foodType.id);
-
-    this.food.type_food_id = this.foodType.id;
     this.foodServices.addFood(this.food).subscribe();
   }
 
