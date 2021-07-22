@@ -21,7 +21,7 @@
     <div class="row justify-content-md-center">
       <div class="col-md-6">
         <label>Genre : </label>
-        <select ng-options="genderCloth as type.label for genderCloth in gendersCloth track by genderCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.gender_cloth_id">
+        <select class="form-select" ng-options="genderCloth as type.label for genderCloth in gendersCloth track by genderCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.gender_cloth_id">
           <option value="" readonly="" selected>-- Choisir --</option>
           <option async *ngFor="let genderCloth of gendersCloth" ngDefaultControl [value]="genderCloth.id">
             {{genderCloth.type}}
@@ -33,7 +33,7 @@
     <div class="row justify-content-md-center">
       <div class="col-md-6">
         <label>Type de Vêtements : </label>
-        <select ng-options="typeCloth as type.label for typeCloth in typesCloth track by typeCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.type_cloth_id">
+        <select class="form-select" ng-options="typeCloth as type.label for typeCloth in typesCloth track by typeCloth.id" [ngModelOptions]="{standalone: true}" [(ngModel)]="cloth.type_cloth_id">
           <option value="" readonly="" selected>-- Choisir --</option>
           <option async *ngFor="let typeCloth of typesCloth" ngDefaultControl [value]="typeCloth.id">
             {{typeCloth.type}}
