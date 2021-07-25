@@ -13,6 +13,36 @@
           <td> <button type="button" (click)="goToMedicamentUpdateForm(medicament.id)">Mettre à jour</button> </td>
           <td> <button type="button" (click)="deleteMedicamentById(medicament.id)">Supprimer</button> </td>
         </tr>
+
+        <ng-template [ngIf]="medicament.expirationDate == undefined">
+          <tr>
+            <td>{{medicament.id}}</td>
+            <td>{{medicament.name}}</td>
+            <td>{{medicament.expirationDate}}</td>
+            <td> <button type="button" (click)="goToMedicamentUpdateForm(medicament.id)">Mettre à jour</button> </td>
+            <td> <button type="button" (click)="deleteMedicamentById(medicament.id)">Supprimer</button> </td>
+          </tr>
+        </ng-template>
+        <ng-template [ngIf]="medicament.expirationDate != undefined && toDate(medicament.expirationDate) <= dateNow">
+          <tr  style="color:red;">
+            <td>{{medicament.id}}</td>
+            <td>{{medicament.name}}</td>
+            <td>{{medicament.expirationDate}}</td>
+            <td> <button type="button" (click)="goToMedicamentUpdateForm(medicament.id)">Mettre à jour</button> </td>
+            <td> <button type="button" (click)="deleteMedicamentById(medicament.id)">Supprimer</button> </td>
+          </tr>
+        </ng-template>
+
+        <ng-template [ngIf]="medicament.expirationDate != undefined && toDate(medicament.expirationDate) > dateNow">
+          <tr>
+            <td>{{medicament.id}}</td>
+            <td>{{medicament.name}}</td>
+            <td>{{medicament.expirationDate}}</td>
+            <td> <button type="button" (click)="goToMedicamentUpdateForm(medicament.id)">Mettre à jour</button> </td>
+            <td> <button type="button" (click)="deleteMedicamentById(medicament.id)">Supprimer</button> </td>
+          </tr>
+        </ng-template>
+
         </tbody>
       </table>
     </div>

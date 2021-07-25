@@ -10,16 +10,23 @@ import {MedicamentServices} from "../services/medicament.services";
 export class MedicamentAddComponent implements OnInit {
 
   medicament = new Medicament();
-
+  dateNow:Date = new Date();
   constructor(private medicamentService: MedicamentServices) { }
 
   ngOnInit(): void {
   }
 
   addMedicament(){
-    this.medicamentService.addMedicament(this.medicament).subscribe(medicamentAdded => {
-      console.log(medicamentAdded);
-    });
+    if(this.medicament.expirationDate!= undefined && this.toDate(this.medicament.expirationDate) > this.dateNow) {
+      this.medicamentService.addMedicament(this.medicament).subscribe(medicamentAdded => {
+        console.log(medicamentAdded);
+      });
+    }
+  }
+
+
+  toDate(date: string): Date{
+    return new Date(date);
   }
 
 }

@@ -14,6 +14,7 @@ export class FoodAddComponent implements OnInit {
   food = new Food();
   typesFood: TypeFood[] | undefined;
   dateNow:Date = new Date();
+
   constructor(private foodServices: FoodServices, private typeFoodServices: TypeFoodServices) { }
 
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class FoodAddComponent implements OnInit {
   }
 
   addFood(){
-    if(this.food.expirationDate!= undefined && this.toDate(this.food.expirationDate) < this.dateNow) {
+    if(this.food.expirationDate!= undefined && this.toDate(this.food.expirationDate) > this.dateNow) {
       this.foodServices.addFood(this.food).subscribe();
     }
   }

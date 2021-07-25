@@ -45,4 +45,9 @@ export class MedicamentComponent implements OnInit {
     window.location.reload();
   }
 
+  dateNow:Date = new Date();
+  toDate(date: string): Date{
+    return new Date(date);
+  }
+
 }
